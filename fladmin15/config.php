@@ -1,0 +1,52 @@
+<?php
+// HTTP
+//define('HTTP_SERVER', 'http://localhost/GitHub/gofootlounge/fladmin15/');
+define('HTTP_SERVER', 'http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/fladmin15/');
+
+
+//define('HTTP_CATALOG', 'http://localhost/GitHub/gofootlounge/');
+define('HTTP_CATALOG', 'http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/');
+
+
+//$documentRoot = $_SERVER['DOCUMENT_ROOT'].'GitHub/gofootlounge/';
+$documentRoot = "/var/app/current/";
+
+define('DOCUMENT_ROOT', $documentRoot); 
+
+// HTTPS
+//define('HTTPS_SERVER', 'http://localhost/GitHub/gofootlounge/fladmin15/');
+define('HTTPS_SERVER', 'http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/fladmin15/');
+
+//define('HTTPS_CATALOG', 'http://localhost/GitHub/gofootlounge/');
+define('HTTPS_CATALOG', 'http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/');
+
+// DIR
+define('DIR_APPLICATION', $documentRoot. 'fladmin15/');
+define('DIR_SYSTEM', $documentRoot. 'system/');
+define('DIR_DATABASE', $documentRoot. 'system/database/');
+define('DIR_LANGUAGE', $documentRoot. 'fladmin15/language/');
+define('DIR_TEMPLATE', $documentRoot. 'fladmin15/view/template/');
+define('DIR_CONFIG', $documentRoot. 'system/config/');
+define('DIR_IMAGE', $documentRoot. 'image/');
+define('DIR_CACHE', $documentRoot. 'system/cache/');
+define('DIR_DOWNLOAD', $documentRoot. 'download/');
+define('DIR_LOGS', $documentRoot. 'system/logs/');
+define('DIR_CATALOG', $documentRoot. 'catalog/');
+
+// DB
+
+define('DB_DRIVER', 'mysqliz');
+define('DB_HOSTNAME', 'aap6sgpx9zn9c6.cvwrkeif9dtm.ap-south-1.rds.amazonaws.com');
+define('DB_USERNAME', 'fldbuser');
+define('DB_PASSWORD', 'Welcome!23');
+define('DB_DATABASE', 'ebdb');
+define('DB_PORT', '3306');
+define('DB_PREFIX', 'oc_');
+
+/*define('DB_DRIVER', 'mysql');
+define('DB_HOSTNAME', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
+define('DB_DATABASE', 'gofootlounge');
+define('DB_PREFIX', 'oc_');*/
+?>
