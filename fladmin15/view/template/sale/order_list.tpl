@@ -313,10 +313,10 @@ if(mailid!='')
             //sending mail
             $.ajax({
             type: "POST",
-            url: 'http://www.footlounge.in/orderemail.php',  
+            url: 'http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/orderemail.php',  
             data: { 
               orderid:orderid,
-              timestamp:timestamp,
+              timestamp:timestamp, 
               emailid:mailid  
             },
             success: function(resp){
