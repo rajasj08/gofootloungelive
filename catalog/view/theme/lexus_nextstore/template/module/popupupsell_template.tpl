@@ -231,8 +231,9 @@
 								<option value="">--Select--</option>
 
 								<?php foreach ($option['option_value'] as $option_value) {
-								$ps=""; if($option_value['price']){
-$ps = split("<span class='WebRupee'>Rs</span>", $option_value['price']);}
+								$ps="";
+if($option_value['price']){
+$ps = split("<span class='WebRupee'>Rs</span>", $option_value['price']); }  
 if($option_value['quantity'] >0 ){ 
 
  ?>
