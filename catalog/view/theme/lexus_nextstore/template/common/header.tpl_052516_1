@@ -238,7 +238,7 @@ function valids()
 var searches = document.getElementById('category_id').value;
 var sval = document.getElementById('searchs').value; 
 
-window.location.href ="http://www.footlounge.in/index.php?route=product/search&search=" + sval + "&category_id=" +searches;
+window.location.href ="http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/index.php?route=product/search&search=" + sval + "&category_id=" +searches;
 }
 
 </script>
@@ -372,9 +372,9 @@ window.location.href ="http://www.footlounge.in/index.php?route=product/search&s
 							<!--* </div>
 							<div class="search-middle1"> **-->
 							 
-								<!--<div class="fb-like" data-href="http://www.footlounge.in" data-width="300px" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div> -->
+								<!--<div class="fb-like" data-href="http://gofootlounge-env.ap-south-1.elasticbeanstalk.com" data-width="300px" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div> -->
 								  
-								<!---**<iframe src="//www.facebook.com/plugins/like.php?href=http://www.footlounge.in/&amp;send=false&amp;layout=button_count&amp;width=90&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" title="Like Foot Locker on Facebook" style="border:none; overflow:hidden; width:90px; height:21px; margin-top:5px;" allowtransparency="true" tabindex="2"></iframe> 
+								<!---**<iframe src="//www.facebook.com/plugins/like.php?href=http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/&amp;send=false&amp;layout=button_count&amp;width=90&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" title="Like Foot Locker on Facebook" style="border:none; overflow:hidden; width:90px; height:21px; margin-top:5px;" allowtransparency="true" tabindex="2"></iframe> 
 
 							</div>  
 
@@ -410,10 +410,10 @@ window.location.href ="http://www.footlounge.in/index.php?route=product/search&s
 
 							<div class="fbclsmain">	
 								<div class="fbcls">
-								<a href="https://www.linkedin.com/company/footlounge-in"><img src="http://www.footlounge.in/image/social-icons/linkedsmall1.png" class="firsticon"></a>
-								<a href="https://www.instagram.com/go_footlounge"><img src="http://www.footlounge.in/image/social-icons/instagramsmall.png" style=" margin-left:5px;" class="secondicon"></a>
-								<a href="https://twitter.com/go_footlounge"><img src="http://www.footlounge.in/image/social-icons/twittersmall1.png" class="thirdicon"></a>
-								<a href="https://www.youtube.com/c/adidas"><img src="http://www.footlounge.in/image/social-icons/youtube-iconsmall.png" style=" margin-left:5px;" class="fourthicon"></a> 
+								<a href="https://www.linkedin.com/company/footlounge-in"><img src="http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/image/social-icons/linkedsmall1.png" class="firsticon"></a>
+								<a href="https://www.instagram.com/go_footlounge"><img src="http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/image/social-icons/instagramsmall.png" style=" margin-left:5px;" class="secondicon"></a>
+								<a href="https://twitter.com/go_footlounge"><img src="http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/image/social-icons/twittersmall1.png" class="thirdicon"></a>
+								<a href="https://www.youtube.com/c/adidas"><img src="http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/image/social-icons/youtube-iconsmall.png" style=" margin-left:5px;" class="fourthicon"></a> 
 								</div>   
 
 								
