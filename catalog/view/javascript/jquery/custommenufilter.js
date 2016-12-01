@@ -651,7 +651,7 @@ function testme()
                      $("#success_msg1").hide();
                 }, 5000);
                 
-                window.location.href='http://testourworks.com/footlounge/new-arrivals'; 
+                window.location.href='http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/new-arrivals'; 
                 } 
                 else
                 {
