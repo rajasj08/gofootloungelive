@@ -124,7 +124,7 @@
 
 	function showlink(link)//show link
 	{
-		window.location.href='//www.gofootlounge-env.ap-south-1.elasticbeanstalk.com/'+link;  
+		window.location.href='http://new-env.ap-south-1.elasticbeanstalk.com/'+link;    
 		
 	}
 </script> 
