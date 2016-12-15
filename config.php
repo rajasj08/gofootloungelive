@@ -5,7 +5,7 @@ ini_set("display_errors", 1);
 
 // HTTP
 //define('HTTP_SERVER', 'http://localhost/GitHub/gofootlounge/');
-define('HTTP_SERVER', 'http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/');
+define('HTTP_SERVER', 'http://new-env.ap-south-1.elasticbeanstalk.com/');
 
 //$documentRoot = $_SERVER['DOCUMENT_ROOT'].'GitHub/gofootlounge/';
 $documentRoot = "/var/app/current/";
@@ -14,7 +14,7 @@ define('DOCUMENT_ROOT', $documentRoot);
 
 // HTTPS
 //define('HTTPS_SERVER', 'http://localhost/GitHub/gofootlounge/');
-define('HTTPS_SERVER', 'http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/');
+define('HTTPS_SERVER', 'http://new-env.ap-south-1.elasticbeanstalk.com/');
 
 
 
@@ -33,9 +33,9 @@ define('DIR_LOGS', $documentRoot. 'system/logs/');
 
 // DB
 
-define('DB_DRIVER', 'mysqliz');
-define('DB_HOSTNAME', 'aap6sgpx9zn9c6.cvwrkeif9dtm.ap-south-1.rds.amazonaws.com');
-define('DB_USERNAME', 'fldbuser');
+define('DB_DRIVER', 'mysql');
+define('DB_HOSTNAME', 'aa7twz1l2thang.cvwrkeif9dtm.ap-south-1.rds.amazonaws.com');
+define('DB_USERNAME', 'admin');
 define('DB_PASSWORD', 'Welcome!23');
 define('DB_DATABASE', 'ebdb');
 define('DB_PORT', '3306');
