@@ -1,11 +1,11 @@
 <?php
 // HTTP
 //define('HTTP_SERVER', 'http://localhost/GitHub/gofootlounge/fladmin15/');
-define('HTTP_SERVER', 'http://new-env.ap-south-1.elasticbeanstalk.com/fladmin15/');
+define('HTTP_SERVER', 'http://gofootlounge.in/fladmin15/');
 
 
 //define('HTTP_CATALOG', 'http://localhost/GitHub/gofootlounge/');
-define('HTTP_CATALOG', 'http://new-env.ap-south-1.elasticbeanstalk.com/');
+define('HTTP_CATALOG', 'http://gofootlounge.in/');
 
 
 //$documentRoot = $_SERVER['DOCUMENT_ROOT'].'GitHub/gofootlounge/';
@@ -15,10 +15,10 @@ define('DOCUMENT_ROOT', $documentRoot);
 
 // HTTPS
 //define('HTTPS_SERVER', 'http://localhost/GitHub/gofootlounge/fladmin15/');
-define('HTTPS_SERVER', 'http://new-env.ap-south-1.elasticbeanstalk.com/fladmin15/');
+define('HTTPS_SERVER', 'http://gofootlounge.in/fladmin15/');
 
 //define('HTTPS_CATALOG', 'http://localhost/GitHub/gofootlounge/');
-define('HTTPS_CATALOG', 'http://new-env.ap-south-1.elasticbeanstalk.com/');
+define('HTTPS_CATALOG', 'http://gofootlounge.in/');
 
 // DIR
 define('DIR_APPLICATION', $documentRoot. 'fladmin15/');
