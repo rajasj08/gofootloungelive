@@ -16,7 +16,7 @@
 				</a>
 			</div>
 			<div id="footsizeblock" class="header-foot-size pull-right">
-				<a href="http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/know-your-size">
+				<a href="https://gofootlounge.in/know-your-size">
 					<span class="fs-img">&nbsp;</span>
 					<span class="text">Size</span>
 				</a>
@@ -124,7 +124,7 @@
 
 	function showlink(link)//show link
 	{
-		window.location.href='//www.gofootlounge-env.ap-south-1.elasticbeanstalk.com/'+link;  
+		window.location.href='https://gofootlounge.in/'+link;    
 		
 	}
 </script> 

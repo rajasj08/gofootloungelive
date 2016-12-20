@@ -1,11 +1,11 @@
 <?php
 // HTTP
 //define('HTTP_SERVER', 'http://localhost/GitHub/gofootlounge/fladmin15/');
-define('HTTP_SERVER', 'http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/fladmin15/');
+define('HTTP_SERVER', 'https://gofootlounge.in/fladmin15/');
 
 
 //define('HTTP_CATALOG', 'http://localhost/GitHub/gofootlounge/');
-define('HTTP_CATALOG', 'http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/');
+define('HTTP_CATALOG', 'https://gofootlounge.in/');
 
 
 //$documentRoot = $_SERVER['DOCUMENT_ROOT'].'GitHub/gofootlounge/';
@@ -15,10 +15,10 @@ define('DOCUMENT_ROOT', $documentRoot);
 
 // HTTPS
 //define('HTTPS_SERVER', 'http://localhost/GitHub/gofootlounge/fladmin15/');
-define('HTTPS_SERVER', 'http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/fladmin15/');
+define('HTTPS_SERVER', 'https://gofootlounge.in/fladmin15/');
 
 //define('HTTPS_CATALOG', 'http://localhost/GitHub/gofootlounge/');
-define('HTTPS_CATALOG', 'http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/');
+define('HTTPS_CATALOG', 'https://gofootlounge.in/');
 
 // DIR
 define('DIR_APPLICATION', $documentRoot. 'fladmin15/');
@@ -35,9 +35,9 @@ define('DIR_CATALOG', $documentRoot. 'catalog/');
 
 // DB
 
-define('DB_DRIVER', 'mysqliz');
-define('DB_HOSTNAME', 'aap6sgpx9zn9c6.cvwrkeif9dtm.ap-south-1.rds.amazonaws.com');
-define('DB_USERNAME', 'fldbuser');
+define('DB_DRIVER', 'mysql');
+define('DB_HOSTNAME', 'aa7twz1l2thang.cvwrkeif9dtm.ap-south-1.rds.amazonaws.com');
+define('DB_USERNAME', 'admin');
 define('DB_PASSWORD', 'Welcome!23');
 define('DB_DATABASE', 'ebdb');
 define('DB_PORT', '3306');
