@@ -16,11 +16,7 @@
 				</a>
 			</div>
 			<div id="footsizeblock" class="header-foot-size pull-right">
-<<<<<<< HEAD
 				<a href="https://gofootlounge.in/know-your-size">
-=======
-				<a href="http://gofootlounge.in/know-your-size">
->>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 					<span class="fs-img">&nbsp;</span>
 					<span class="text">Size</span>
 				</a>
@@ -71,11 +67,7 @@
 
 	function showlink(link)//show link
 	{
-<<<<<<< HEAD
 		window.location.href='https://gofootlounge.in/'+link;  
-=======
-		window.location.href='http://gofootlounge.in/'+link;  
->>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 		
 	}
 </script> 

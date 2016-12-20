@@ -226,11 +226,7 @@ function valids()
 var searches = document.getElementById('category_id').value;
 var sval = document.getElementById('searchs').value; 
 
-<<<<<<< HEAD
 window.location.href ="https://gofootlounge.in/index.php?route=product/search&search=" + sval + "&category_id=" +searches;
-=======
-window.location.href ="http://gofootlounge.in/index.php?route=product/search&search=" + sval + "&category_id=" +searches;
->>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 }
 
 </script>

@@ -193,7 +193,6 @@
 										<ul> -->
 											
 											<li class="col-lg-4 col-sm-4 col-xs-12">
-<<<<<<< HEAD
 												<a href="https://gofootlounge.in/adidas-shoes-online">Adidas</a>
 																							
 											</li>
@@ -215,46 +214,15 @@
 											</li>
 											<li class="col-lg-4 col-sm-4 col-xs-12">
 												<a href="https://gofootlounge.in/footlounge-sports-clothing-online">foot lounge</a>
-=======
-												<a href="http://gofootlounge.in/adidas-shoes-online">Adidas</a>
-																							
-											</li>
-											<li class="col-lg-4 col-sm-4 col-xs-12">
-												<a href="http://gofootlounge.in/reebok-shoes-online">Reebok</a>
-																							
-											</li>
-											<li class="col-lg-4 col-sm-4 col-xs-12">
-												<a href="http://gofootlounge.in/nike-shoes-online">Nike</a>
-																							
-											</li>
-											<li class="col-lg-4 col-sm-4 col-xs-12">
-												<a href="http://gofootlounge.in/american-tourister-travel-bags-online">American Tourister</a>
-																							
-											</li>
-											<li class="col-lg-4 col-sm-4 col-xs-12">
-												<a href="http://gofootlounge.in/fila-shoes-online">Fila</a>
-																							
-											</li>
-											<li class="col-lg-4 col-sm-4 col-xs-12">
-												<a href="http://gofootlounge.in/footlounge-sports-clothing-online">foot lounge</a>
->>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 																							
 											</li>
 
 											<li class="col-lg-4 col-sm-4 col-xs-12">
-<<<<<<< HEAD
 												<a href="https://gofootlounge.in/lee-cooper-shoes-online">Lee Cooper</a>
 																							
 											</li>
 											<li class="col-lg-4 col-sm-4 col-xs-12">
 												<a href="https://gofootlounge.in/puma-shoes-online">puma</a>
-=======
-												<a href="http://gofootlounge.in/lee-cooper-shoes-online">Lee Cooper</a>
-																							
-											</li>
-											<li class="col-lg-4 col-sm-4 col-xs-12">
-												<a href="http://gofootlounge.in/puma-shoes-online">puma</a>
->>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 																							
 											</li>
 											
@@ -285,7 +253,6 @@
 										<ul> -->
 											
 											<li class="col-lg-4 col-sm-4 col-xs-12">
-<<<<<<< HEAD
 												<a href="https://gofootlounge.in/about_us">About Us</a>
 																							
 											</li>
@@ -303,25 +270,6 @@
 											</li>
 											<li class="col-lg-4 col-sm-4 col-xs-12">
 												<a href="https://gofootlounge.in/footlounge-return-policy">Return Policy</a>
-=======
-												<a href="http://gofootlounge.in/about_us">About Us</a>
-																							
-											</li>
-											<li class="col-lg-4 col-sm-4 col-xs-12">
-												<a href="http://gofootlounge.in/delivery-information">Delivery Information</a>
-																							
-											</li>
-											<li class="col-lg-4 col-sm-4 col-xs-12">
-												<a href="http://gofootlounge.in/terms-conditions">Terms & Conditions</a>
-																							
-											</li>
-											<li class="col-lg-4 col-sm-4 col-xs-12">
-												<a href="http://gofootlounge.in/privacy-policy-and-pisclaimer">Privacy Policy And Disclaimer</a>
-																							
-											</li>
-											<li class="col-lg-4 col-sm-4 col-xs-12">
-												<a href="http://gofootlounge.in/footlounge-return-policy">Return Policy</a>
->>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 																							
 											</li>
 											
@@ -352,7 +300,6 @@
 										<ul> -->
 											
 											<li class="col-lg-4 col-sm-4 col-xs-12">
-<<<<<<< HEAD
 												<a href="https://gofootlounge.in/contact">Contact Us</a>
 																							
 											</li>
@@ -366,21 +313,6 @@
 											</li>
 											<li class="col-lg-4 col-sm-4 col-xs-12">
 												<a href="https://gofootlounge.in/Footlounge-Frequently-Asked-Questions">FAQ</a>
-=======
-												<a href="http://gofootlounge.in/contact">Contact Us</a>
-																							
-											</li>
-											<li class="col-lg-4 col-sm-4 col-xs-12">
-												<a href="http://gofootlounge.in/return">Returns</a>
-																							
-											</li>
-											<li class="col-lg-4 col-sm-4 col-xs-12">
-												<a href="http://gofootlounge.in/sitemap">Site Map</a>
-																							
-											</li>
-											<li class="col-lg-4 col-sm-4 col-xs-12">
-												<a href="http://gofootlounge.in/Footlounge-Frequently-Asked-Questions">FAQ</a>
->>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 																							
 											</li>
 											
