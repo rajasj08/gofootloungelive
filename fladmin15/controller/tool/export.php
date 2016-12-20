@@ -573,7 +573,7 @@ $totalval=0;
          							//{	
          							
  
-$cutimage= "https://gofootlounge.in/image/".$valuen->image;
+$cutimage= "gofootlounge.in/image/".$valuen->image;
 $cutimage = str_replace(' ', '%20', $cutimage);
 if($valuen->price){$shopprodprice=$valuen->price;}
 
