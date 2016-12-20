@@ -1,11 +1,19 @@
 <?php
 // HTTP
 //define('HTTP_SERVER', 'http://localhost/GitHub/gofootlounge/fladmin15/');
+<<<<<<< HEAD
 define('HTTP_SERVER', 'https://gofootlounge.in/fladmin15/');
 
 
 //define('HTTP_CATALOG', 'http://localhost/GitHub/gofootlounge/');
 define('HTTP_CATALOG', 'https://gofootlounge.in/');
+=======
+define('HTTP_SERVER', 'http://gofootlounge.in/fladmin15/');
+
+
+//define('HTTP_CATALOG', 'http://localhost/GitHub/gofootlounge/');
+define('HTTP_CATALOG', 'http://gofootlounge.in/');
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 
 
 //$documentRoot = $_SERVER['DOCUMENT_ROOT'].'GitHub/gofootlounge/';
@@ -15,10 +23,17 @@ define('DOCUMENT_ROOT', $documentRoot);
 
 // HTTPS
 //define('HTTPS_SERVER', 'http://localhost/GitHub/gofootlounge/fladmin15/');
+<<<<<<< HEAD
 define('HTTPS_SERVER', 'https://gofootlounge.in/fladmin15/');
 
 //define('HTTPS_CATALOG', 'http://localhost/GitHub/gofootlounge/');
 define('HTTPS_CATALOG', 'https://gofootlounge.in/');
+=======
+define('HTTPS_SERVER', 'http://gofootlounge.in/fladmin15/');
+
+//define('HTTPS_CATALOG', 'http://localhost/GitHub/gofootlounge/');
+define('HTTPS_CATALOG', 'http://gofootlounge.in/');
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 
 // DIR
 define('DIR_APPLICATION', $documentRoot. 'fladmin15/');

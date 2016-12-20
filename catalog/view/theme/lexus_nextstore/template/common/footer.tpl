@@ -88,7 +88,11 @@ $class = $helper->calculateSpans( $ospans, $cols );
 			</div>
 			<div class="col-md-4 col-sm-12">
 				<div class="shipping-cod-secure-payment-cont">
+<<<<<<< HEAD
 					<img src="https://gofootlounge.in/image/shipping-cod-secure-payment.png">
+=======
+					<img src="http://gofootlounge.in/image/shipping-cod-secure-payment.png">
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 				</div>
 				<div class="clrBoth">&nbsp;</div>
 			</div>
@@ -100,6 +104,7 @@ $class = $helper->calculateSpans( $ospans, $cols );
 				<div class="shippincon">
 <div class="col-sm-4">
 
+<<<<<<< HEAD
 <img src="https://gofootlounge.in/image/indian-rupee-symbol-icon.png" alt="cash on delivery">cash on delivery
 </div>
 <div class="col-sm-4">
@@ -108,6 +113,16 @@ $class = $helper->calculateSpans( $ospans, $cols );
 </div>
 <div class="col-sm-4">
 <img src="https://gofootlounge.in/image/free-shipping-icon.png" alt="free shipping">free shipping	
+=======
+<img src="http://gofootlounge.in/image/indian-rupee-symbol-icon.png" alt="cash on delivery">cash on delivery
+</div>
+<div class="col-sm-4">
+
+<img src="http://gofootlounge.in/image/100-percent-secure-icon.png" alt="secure shopping">Secure Shopping
+</div>
+<div class="col-sm-4">
+<img src="http://gofootlounge.in/image/free-shipping-icon.png" alt="free shipping">free shipping	
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 </div>
 <div class="clear"></div>
 </div>
@@ -232,7 +247,11 @@ $class = $helper->calculateSpans( $ospans, $cols );
 							<li><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
 							<li><a href="<?php echo $return; ?>"><?php echo $text_return; ?></a></li>
 							<li><a href="<?php echo $sitemap; ?>"><?php echo $text_sitemap; ?></a></li>
+<<<<<<< HEAD
 							<li><a href="https://gofootlounge.in/Footlounge-Frequently-Asked-Questions">FAQ</a></li>
+=======
+							<li><a href="http://gofootlounge.in/Footlounge-Frequently-Asked-Questions">FAQ</a></li>
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 						</ul>
 					</div>	
 				</div>
@@ -242,7 +261,11 @@ $class = $helper->calculateSpans( $ospans, $cols );
 		 <div class="col-xs-12">
  <div class="footext new_foot_border">	
 <div class="footer-linktext footernstyle">Top Brands</div>
+<<<<<<< HEAD
 <p class="category-p"><a href="https://gofootlounge.in/adidas-shoes-online" class="linklight">Adidas</a>&nbsp;/&nbsp;<a class="linklight" href="https://gofootlounge.in/reebok-shoes-online">Reebok</a>&nbsp;/&nbsp;<a class="linklight" href="https://gofootlounge.in/nike-shoes-online">Nike</a>&nbsp;/&nbsp;<a class="linklight" href="https://gofootlounge.in/american-tourister-travel-bags-online">American Tourister</a>&nbsp;/&nbsp;<a class="linklight" href="https://gofootlounge.in/fila-shoes-online">Fila</a>&nbsp;/&nbsp;<a class="linklight" href="https://gofootlounge.in/footlounge-sports-clothing-online">Foot Lounge</a>&nbsp;/&nbsp;<a class="linklight" href="https://gofootlounge.in/lee-cooper-shoes-online">Lee Cooper</a>&nbsp;/&nbsp;<a class="linklight" href="https://gofootlounge.in/puma-shoes-online">Puma</a></p>
+=======
+<p class="category-p"><a href="http://gofootlounge.in/adidas-shoes-online" class="linklight">Adidas</a>&nbsp;/&nbsp;<a class="linklight" href="http://gofootlounge.in/reebok-shoes-online">Reebok</a>&nbsp;/&nbsp;<a class="linklight" href="http://gofootlounge.in/nike-shoes-online">Nike</a>&nbsp;/&nbsp;<a class="linklight" href="http://gofootlounge.in/american-tourister-travel-bags-online">American Tourister</a>&nbsp;/&nbsp;<a class="linklight" href="http://gofootlounge.in/fila-shoes-online">Fila</a>&nbsp;/&nbsp;<a class="linklight" href="http://gofootlounge.in/footlounge-sports-clothing-online">Foot Lounge</a>&nbsp;/&nbsp;<a class="linklight" href="http://gofootlounge.in/lee-cooper-shoes-online">Lee Cooper</a>&nbsp;/&nbsp;<a class="linklight" href="http://gofootlounge.in/puma-shoes-online">Puma</a></p>
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 </div>
 </div>
 		 <div class="col-xs-12"> 	
@@ -250,7 +273,11 @@ $class = $helper->calculateSpans( $ospans, $cols );
 <div class="footer-linktext footernstyle">Top Categories</div>
 
 <!--<a href="javascript:void(0)" class="linklight">Men Shoes</a>&nbsp;/&nbsp;<a class="linklight" href="javascript:void(0)">Men Clothing</a>&nbsp;/&nbsp;<a class="linklight" href="javascript:void(0)">Men Accessories</a>&nbsp;/&nbsp;<a class="linklight" href="javascript:void(0)">Men Fitness</a>&nbsp;/&nbsp;<a class="linklight" href="javascript:void(0)">running shoes</a>/<a href="javascript:void(0)">tennis shoes</a>/<a href="javascript:void(0)">cricket shoes</a>/<a href="javascript:void(0)">football shoes</a>/<a href="javascript:void(0)">basketball shoes</a>/<a href="javascript:void(0)">training shoes</a>/<a href="javascript:void(0)">walking shoes</a>/<a href="javascript:void(0)">floaters</a>/<a href="javascript:void(0)">flip-flops/sandals</a>/<a href="javascript:void(0)">hiking shoes</a>/<a href="javascript:void(0)">cardio shoes</a>/<a href="javascript:void(0)">dance shoes</a>/<a href="javascript:void(0)">sports clothing</a>/<a href="javascript:void(0)">sports shorts</a>/<a href="javascript:void(0)">sports t-shirts</a>/<a href="javascript:void(0)">sports track pants</a>/<a href="javascript:void(0)">caps</a>/<a href="javascript:void(0)">wallets</a>/<a href="javascript:void(0)">socks</a>/<a href="javascript:void(0)">headbands</a>/<a href="javascript:void(0)">back pack</a>/<a href="javascript:void(0)">travel bag</a>/<a href="javascript:void(0)">yoga mat</a>/<a href="javascript:void(0)">fitness mat</a>/<a href="javascript:void(0)">resistance tube</a>/<a href="javascript:void(0)">power tube</a>/<a href="javascript:void(0)">dumbbells</a>/<a href="javascript:void(0)">kettle bells</a>/<a href="javascript:void(0)">weights</a>/<a href="javascript:void(0)">bottle</a> -->
+<<<<<<< HEAD
 <p class="category-p"><a href="https://gofootlounge.in/men" class="linklight">Men</a>&nbsp;/&nbsp;<a class="linklight" href="https://gofootlounge.in/women">Women</a>&nbsp;/&nbsp;<a class="linklight" href="https://gofootlounge.in/kids">Kids</a>&nbsp;/&nbsp;<a class="linklight" href="https://gofootlounge.in/men/shoes">Sport Shoes</a>&nbsp;/&nbsp;<a class="linklight" href="https://gofootlounge.in/men/shoes/running-shoes">running Shoes</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/men/shoes/sports/tennis-shoes" class="linklight">Tennis Shoes</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/men/shoes/sports/cricket-shoes" class="linklight">Cricket Shoes</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/men/shoes/sports/football-shoes" class="linklight">Football Shoes</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/men/shoes/sports/basketball-shoes" class="linklight">Basketball Shoes</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/men/shoes/training-shoes" class="linklight">Training Shoes</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/women/shoes/walking-shoes" class="linklight">Walking Shoes</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/men/shoes/sandals-floaters" class="linklight">Floaters</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/women/shoes/flip-flops-slippers" class="linklight">Flip - Flops</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/men/shoes/sandals-floaters" class="linklight">Sandals</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/men/shoes/outdoor-hiking-shoes" class="linklight">Hiking Shoes</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/women/shoes/cardio-shoes" class="linklight">Cardio Shoes</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/women/shoes/dance-shoes" class="linklight">Dance Shoes</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/men/clothing" class="linklight">Sport Clothing</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/men/clothing/shorts" class="linklight">Sport Shorts</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/men/clothing/t-shirt" class="linklight">Sport T-Shirts</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/men/clothing/track-pants" class="linklight">Sports Track Pants</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/men/accessories/caps" class="linklight">Caps</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/men/accessories/wallet" class="linklight">Wallets</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/men/accessories/socks" class="linklight">Socks</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/men/accessories/headband" class="linklight">Headbands</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/men/accessories/backpack" class="linklight">Back Pack</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/men/accessories/travel-bag" class="linklight">Travel Bag</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/fitness/yoga-mat" class="linklight">Yoga Mat</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/fitness/fitness-mat" class="linklight">Fitness Mat</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/fitness/resistance-tube" class="linklight">Resistance Tube</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/fitness/power-tube" class="linklight">power Tube</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/fitness/dumbells" class="linklight">Dumbbells</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/fitness/kettle-bells" class="linklight">Kettle Bells</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/fitness/ankle-weight" class="linklight">Weights</a>&nbsp;/&nbsp;<a href="https://gofootlounge.in/fitness/water-bottle" class="linklight">Bottle</a></p>
+=======
+<p class="category-p"><a href="http://gofootlounge.in/men" class="linklight">Men</a>&nbsp;/&nbsp;<a class="linklight" href="http://gofootlounge.in/women">Women</a>&nbsp;/&nbsp;<a class="linklight" href="http://gofootlounge.in/kids">Kids</a>&nbsp;/&nbsp;<a class="linklight" href="http://gofootlounge.in/men/shoes">Sport Shoes</a>&nbsp;/&nbsp;<a class="linklight" href="http://gofootlounge.in/men/shoes/running-shoes">running Shoes</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/men/shoes/sports/tennis-shoes" class="linklight">Tennis Shoes</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/men/shoes/sports/cricket-shoes" class="linklight">Cricket Shoes</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/men/shoes/sports/football-shoes" class="linklight">Football Shoes</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/men/shoes/sports/basketball-shoes" class="linklight">Basketball Shoes</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/men/shoes/training-shoes" class="linklight">Training Shoes</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/women/shoes/walking-shoes" class="linklight">Walking Shoes</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/men/shoes/sandals-floaters" class="linklight">Floaters</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/women/shoes/flip-flops-slippers" class="linklight">Flip - Flops</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/men/shoes/sandals-floaters" class="linklight">Sandals</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/men/shoes/outdoor-hiking-shoes" class="linklight">Hiking Shoes</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/women/shoes/cardio-shoes" class="linklight">Cardio Shoes</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/women/shoes/dance-shoes" class="linklight">Dance Shoes</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/men/clothing" class="linklight">Sport Clothing</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/men/clothing/shorts" class="linklight">Sport Shorts</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/men/clothing/t-shirt" class="linklight">Sport T-Shirts</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/men/clothing/track-pants" class="linklight">Sports Track Pants</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/men/accessories/caps" class="linklight">Caps</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/men/accessories/wallet" class="linklight">Wallets</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/men/accessories/socks" class="linklight">Socks</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/men/accessories/headband" class="linklight">Headbands</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/men/accessories/backpack" class="linklight">Back Pack</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/men/accessories/travel-bag" class="linklight">Travel Bag</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/fitness/yoga-mat" class="linklight">Yoga Mat</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/fitness/fitness-mat" class="linklight">Fitness Mat</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/fitness/resistance-tube" class="linklight">Resistance Tube</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/fitness/power-tube" class="linklight">power Tube</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/fitness/dumbells" class="linklight">Dumbbells</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/fitness/kettle-bells" class="linklight">Kettle Bells</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/fitness/ankle-weight" class="linklight">Weights</a>&nbsp;/&nbsp;<a href="http://gofootlounge.in/fitness/water-bottle" class="linklight">Bottle</a></p>
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 </div>	
 
 </div>
@@ -271,7 +298,11 @@ Footlounge.in powered by <a href="http://tech-bee.com/" target="_blank">Tech-Bee
 
 
 <div id="clickme" class="footerclass">
+<<<<<<< HEAD
 <img src="https://gofootlounge.in/image/downarrow.png" alt="footlounge">
+=======
+<img src="http://gofootlounge.in/image/downarrow.png" alt="footlounge">
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 
 </div>
 
@@ -322,7 +353,11 @@ Worry not as we now have an accurate shoe size measuring tool for your convenien
 Why Over pay? Shop with us to get the best deals in the market.
 We now provide the same great in-store shopping experience to our online community with our online shop-www.gofootlounge-env.ap-south-1.elasticbeanstalk.com. We offer the best deals and discounts for sports shoes, sports clothing and sports accessories. Explore our sports collections in Adidas Sale, Reebok Sale, and Nike Sale. 
 Our Online shop also have weekly sale/discounts on branded clothing , fitness and accessory – Adidas track pants, Adidas t-shirts, Adidas shorts, Adidas socks, Adidas caps,  Adidas bags, Reebok track pants, Reebok t-shirts, Reebok socks, Reebok caps, sports bags, yoga mats, dumbbells, weights, tubes, bottles, kettle bells. Buy from our extensive range of sports shoes which include Tennis shoes, Cricket shoes, Football shoes, Basketball shoes, Running shoes, Training shoes, Cardio shoes, Dance shoes, Hiking shoes, Floaters, Flip-flops, Sandals. Our online shop now carry American Tourister products for a limited time.
+<<<<<<< HEAD
 <div class="footernstyle">Introducing Brand <img src="https://gofootlounge.in/image/data/lo2logo.png" alt="Footlounge Logo" class="footerlogoimg"/></div>
+=======
+<div class="footernstyle">Introducing Brand <img src="http://gofootlounge.in/image/data/lo2logo.png" alt="Footlounge Logo" class="footerlogoimg"/></div>
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 Did you try out our very own Brand FootLounge? Affordable Sportswear range includes Track pants, Sports T-shirts and Sports Shorts. Our unique Dry Cool technology keeps you at ease all day long. Our products are a unique combination of top quality products and rock bottom prices.
 <br/><br/> 
 Prices starting from Rs 454/- . Try us out Now!
@@ -342,7 +377,11 @@ Prices starting from Rs 454/- . Try us out Now!
 
 
 <div class="mobcnt removenormalmob">
+<<<<<<< HEAD
 <div class="column col-xs-12 col-sm-3 col-lg-3 col-md-3 "><div class="box-heading mobileheadn"><!--<span class="footer-linktext linkmob">Quick Links</span>--></div><div class="column col-xs-7 col-sm-3 col-lg-3 col-md-3 footermob"><div class="box info"><div class="box-content"><ul class="list"><li class="first"><a href="https://gofootlounge.in/delivery-information">Delivery Information</a></li><li><a href="https://gofootlounge.in/brands">Brands</a></li><li class="last"><a href="https://gofootlounge.in/footlounge-return-policy">Return Policy</a></li></ul></div></div><!--<a href="mailto:order@footlounge.in"><button type="button" class="emailbtnmob">Email Us</button></a> --></div><div class="column col-xs-5 col-sm-3 col-lg-3 col-md-3 footermob"><div class="box info"><div class="box-content"><ul class="list"><li class="last"><a href="https://gofootlounge.in/Footlounge-Frequently-Asked-Questions">FAQ</a></li><li><a href="https://gofootlounge.in/voucher">Gift Vouchers</a></li><li><a href="https://gofootlounge.in/sitemap">Site Map</a></li></ul></div></div><!--<a href="https://gofootlounge.in/contact"><button type="button" class="emailbtnmob">Contact Us</button></a>-->
+=======
+<div class="column col-xs-12 col-sm-3 col-lg-3 col-md-3 "><div class="box-heading mobileheadn"><!--<span class="footer-linktext linkmob">Quick Links</span>--></div><div class="column col-xs-7 col-sm-3 col-lg-3 col-md-3 footermob"><div class="box info"><div class="box-content"><ul class="list"><li class="first"><a href="http://gofootlounge.in/delivery-information">Delivery Information</a></li><li><a href="http://gofootlounge.in/brands">Brands</a></li><li class="last"><a href="http://gofootlounge.in/footlounge-return-policy">Return Policy</a></li></ul></div></div><!--<a href="mailto:order@footlounge.in"><button type="button" class="emailbtnmob">Email Us</button></a> --></div><div class="column col-xs-5 col-sm-3 col-lg-3 col-md-3 footermob"><div class="box info"><div class="box-content"><ul class="list"><li class="last"><a href="http://gofootlounge.in/Footlounge-Frequently-Asked-Questions">FAQ</a></li><li><a href="http://gofootlounge.in/voucher">Gift Vouchers</a></li><li><a href="http://gofootlounge.in/sitemap">Site Map</a></li></ul></div></div><!--<a href="http://gofootlounge.in/contact"><button type="button" class="emailbtnmob">Contact Us</button></a>-->
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 
 
 </div><div class="fccenter"><a href="mailto:order@footlounge.in"><button type="button" class="emailbtnmob"><i class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp;Email Us</button></a></div></div>
@@ -366,7 +405,11 @@ Prices starting from Rs 454/- . Try us out Now!
 		
 			</div>
 
+<<<<<<< HEAD
 <div class="mobilelastcol"><a href="https://gofootlounge.in/terms-conditions">Terms &amp; Conditions</a> | <a href="https://gofootlounge.in/privacy-policy-and-pisclaimer">Privacy Policy</a> | <a href="https://gofootlounge.in/aboutus">About Us</a></div></div>
+=======
+<div class="mobilelastcol"><a href="http://gofootlounge.in/terms-conditions">Terms &amp; Conditions</a> | <a href="http://gofootlounge.in/privacy-policy-and-pisclaimer">Privacy Policy</a> | <a href="http://gofootlounge.in/aboutus">About Us</a></div></div>
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 </div>	
 
 

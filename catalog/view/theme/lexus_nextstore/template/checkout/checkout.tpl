@@ -73,7 +73,11 @@
         <h4 class="modal-title">Reset Pincode</h4>
       </div>
       <div class="modal-body">  
+<<<<<<< HEAD
       <!--<div style="margin-bottom: 20px;" ><p>This product has been solded out! Kindly fill the following details, our executive will contact you in another 48 hours. <a href="https://gofootlounge.in/new-arrivals"><span style="color: #CD6927 " id="modal_content">Happy Shopping</span><a></p></div>-->
+=======
+      <!--<div style="margin-bottom: 20px;" ><p>This product has been solded out! Kindly fill the following details, our executive will contact you in another 48 hours. <a href="http://gofootlounge.in/new-arrivals"><span style="color: #CD6927 " id="modal_content">Happy Shopping</span><a></p></div>-->
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 		<div style="margin-bottom: 20px;" ><p> Seems like the pincode is missing or an invalid entry. You can either replace the pincode to your current address  or ignore this process and go with adding the new address. (Pincode tells you the availability of the COD).</p></div>
 
        	<form class="form-horizontal"> 

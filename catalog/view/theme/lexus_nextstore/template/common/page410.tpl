@@ -22,7 +22,11 @@ require( DIR_TEMPLATE.$this->config->get('config_template')."/template/common/co
 		<div class="fl_404_container">   
     
     <div tabindex="501" class="screenreader">
+<<<<<<< HEAD
        <img src="https://gofootlounge.in/catalog/view/theme/lexus_nextstore/image/FootLounge-Page410-Error.jpg" class="new_page_imgwid" alt="Page 404">
+=======
+       <img src="http://gofootlounge.in/catalog/view/theme/lexus_nextstore/image/FootLounge-Page410-Error.jpg" class="new_page_imgwid" alt="Page 404">
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 
     <!--<p class="errorpage">404 <span> page not found</span></p>-->
     <p>The page you requested is no longer here.</p>
@@ -40,13 +44,18 @@ require( DIR_TEMPLATE.$this->config->get('config_template')."/template/common/co
 								<ul>
 									
 									<!---<li class="col-lg-12 col-sm-12 col-xs-12">
+<<<<<<< HEAD
 										<a href="https://gofootlounge.in/running-shoes">Top Brands</a>
+=======
+										<a href="http://gofootlounge.in/running-shoes">Top Brands</a>
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 
 
 									
 										<ul> -->
 											
 											<li class="col-lg-3 col-sm-3 col-xs-12 first liststyle">
+<<<<<<< HEAD
 												<a href="https://gofootlounge.in/men">Men</a>
 																							
 											</li>
@@ -68,10 +77,34 @@ require( DIR_TEMPLATE.$this->config->get('config_template')."/template/common/co
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
 												<a href="https://gofootlounge.in/flip-flops">Flip Flops</a>
+=======
+												<a href="http://gofootlounge.in/men">Men</a>
+																							
+											</li>
+											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
+												<a href="http://gofootlounge.in/women">Women</a>
+																							
+											</li>
+											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
+												<a href="http://gofootlounge.in/kids">Kids</a>
+																							
+											</li>
+											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
+												<a href="http://gofootlounge.in/fitness">Fitness</a>
+																							
+											</li>
+											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
+												<a href="http://gofootlounge.in/apparel">Apparel</a>
+																							
+											</li>
+											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
+												<a href="http://gofootlounge.in/flip-flops">Flip Flops</a>
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 																							
 											</li>
 
 											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
+<<<<<<< HEAD
 												<a href="https://gofootlounge.in/lifestyle-sandals">LifeStyle Sandals</a>
 																							
 											</li>
@@ -81,6 +114,17 @@ require( DIR_TEMPLATE.$this->config->get('config_template')."/template/common/co
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 last liststyle">
 												<a href="https://gofootlounge.in/running-shoes">Running Shoes</a>
+=======
+												<a href="http://gofootlounge.in/lifestyle-sandals">LifeStyle Sandals</a>
+																							
+											</li>
+											<li class="col-lg-3 col-sm-3 col-xs-12 last liststyle">
+												<a href="http://gofootlounge.in/luggage-bags">Luggage Bags</a>
+																							
+											</li>
+											<li class="col-lg-3 col-sm-3 col-xs-12 last liststyle">
+												<a href="http://gofootlounge.in/running-shoes">Running Shoes</a>
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 																							
 											</li>
 											
@@ -106,13 +150,18 @@ require( DIR_TEMPLATE.$this->config->get('config_template')."/template/common/co
 								<ul>
 									
 									<!---<li class="col-lg-12 col-sm-12 col-xs-12">
+<<<<<<< HEAD
 										<a href="https://gofootlounge.in/running-shoes">Top Brands</a>
+=======
+										<a href="http://gofootlounge.in/running-shoes">Top Brands</a>
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 
 
 									
 										<ul> -->
 											
 											<li class="col-lg-3 col-sm-3 col-xs-12 first liststyle">
+<<<<<<< HEAD
 												<a href="https://gofootlounge.in/adidas-shoes-online">Adidas</a>
 																							
 											</li>
@@ -134,15 +183,46 @@ require( DIR_TEMPLATE.$this->config->get('config_template')."/template/common/co
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
 												<a href="https://gofootlounge.in/footlounge-sports-clothing-online">Foot Lounge</a>
+=======
+												<a href="http://gofootlounge.in/adidas-shoes-online">Adidas</a>
+																							
+											</li>
+											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
+												<a href="http://gofootlounge.in/reebok-shoes-online">Reebok</a>
+																							
+											</li>
+											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
+												<a href="http://gofootlounge.in/nike-shoes-online">Nike</a>
+																							
+											</li>
+											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
+												<a href="http://gofootlounge.in/american-tourister-travel-bags-online">American Tourister</a>
+																							
+											</li>
+											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
+												<a href="http://gofootlounge.in/fila-shoes-online">Fila</a>
+																							
+											</li>
+											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
+												<a href="http://gofootlounge.in/footlounge-sports-clothing-online">Foot Lounge</a>
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 																							
 											</li>
 
 											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
+<<<<<<< HEAD
 												<a href="https://gofootlounge.in/lee-cooper-shoes-online">Lee Cooper</a>
 																							
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 last liststyle">
 												<a href="https://gofootlounge.in/puma-shoes-online">Puma</a>
+=======
+												<a href="http://gofootlounge.in/lee-cooper-shoes-online">Lee Cooper</a>
+																							
+											</li>
+											<li class="col-lg-3 col-sm-3 col-xs-12 last liststyle">
+												<a href="http://gofootlounge.in/puma-shoes-online">Puma</a>
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 																							
 											</li>
 											
@@ -167,11 +247,16 @@ require( DIR_TEMPLATE.$this->config->get('config_template')."/template/common/co
 								<ul>
 									
 								<!---	<li class="col-lg-12 col-sm-12 col-xs-12">
+<<<<<<< HEAD
 										<a href="https://gofootlounge.in/running-shoes">Information</a>
+=======
+										<a href="http://gofootlounge.in/running-shoes">Information</a>
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 									
 										<ul> -->
 											
 											<li class="col-lg-3 col-sm-3 col-xs-12 first liststyle">
+<<<<<<< HEAD
 												<a href="https://gofootlounge.in/about_us">About Us</a>
 																							
 											</li>
@@ -189,6 +274,25 @@ require( DIR_TEMPLATE.$this->config->get('config_template')."/template/common/co
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 last liststyle">
 												<a href="https://gofootlounge.in/footlounge-return-policy">Return Policy</a>
+=======
+												<a href="http://gofootlounge.in/about_us">About Us</a>
+																							
+											</li>
+											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
+												<a href="http://gofootlounge.in/delivery-information">Delivery Information</a>
+																							
+											</li>
+											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
+												<a href="http://gofootlounge.in/terms-conditions">Terms &amp; Conditions</a>
+																							
+											</li>
+											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
+												<a href="http://gofootlounge.in/privacy-policy-and-pisclaimer">Privacy Policy And Disclaimer</a>
+																							
+											</li>
+											<li class="col-lg-3 col-sm-3 col-xs-12 last liststyle">
+												<a href="http://gofootlounge.in/footlounge-return-policy">Return Policy</a>
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 																							
 											</li>
 											
@@ -213,11 +317,16 @@ require( DIR_TEMPLATE.$this->config->get('config_template')."/template/common/co
 								<ul>
 									
 								<!---	<li class="col-lg-12 col-sm-12 col-xs-12">
+<<<<<<< HEAD
 										<a href="https://gofootlounge.in/running-shoes">Information</a>
+=======
+										<a href="http://gofootlounge.in/running-shoes">Information</a>
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 									
 										<ul> -->
 											
 											<li class="col-lg-3 col-sm-3 col-xs-12 first liststyle">
+<<<<<<< HEAD
 												<a href="https://gofootlounge.in/contact">Contact Us</a>
 																							
 											</li>
@@ -231,6 +340,21 @@ require( DIR_TEMPLATE.$this->config->get('config_template')."/template/common/co
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 last liststyle">
 												<a href="https://gofootlounge.in/Footlounge-Frequently-Asked-Questions">FAQ</a>
+=======
+												<a href="http://gofootlounge.in/contact">Contact Us</a>
+																							
+											</li>
+											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
+												<a href="http://gofootlounge.in/return">Returns</a>
+																							
+											</li>
+											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
+												<a href="http://gofootlounge.in/sitemap">Site Map</a>
+																							
+											</li>
+											<li class="col-lg-3 col-sm-3 col-xs-12 last liststyle">
+												<a href="http://gofootlounge.in/Footlounge-Frequently-Asked-Questions">FAQ</a>
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 																							
 											</li>
 											
@@ -419,7 +543,11 @@ $class = $helper->calculateSpans( $ospans, $cols );
 			</form>
       </div>
       <div class="modal-footer new_page_padd1">
+<<<<<<< HEAD
      <span id="loadingspan" class="new_page_disp1"><img src="https://gofootlounge.in/catalog/view/theme/lexus_nextstore/image/fb-loading.gif" alt="Loading"> </span>  
+=======
+     <span id="loadingspan" class="new_page_disp1"><img src="http://gofootlounge.in/catalog/view/theme/lexus_nextstore/image/fb-loading.gif" alt="Loading"> </span>  
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
       <span id="successcls1" class="new_page_disp2"></span> 
 
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -56,8 +56,13 @@ ecomm_pagetype: "home"
   "@context": "http://schema.org",
   "@type": "Organization",
   "name" : "footlounge",
+<<<<<<< HEAD
   "url": "https://gofootlounge.in",
   "logo": "https://gofootlounge.in/image/data/lo2logo.png",
+=======
+  "url": "http://gofootlounge.in",
+  "logo": "http://gofootlounge.in/image/data/lo2logo.png",
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
   "contactPoint": [{
     "@type": "ContactPoint",
     "telephone": "+91-91768-70701",

@@ -638,8 +638,13 @@ $ps = split("<span class='WebRupee'>Rs</span>", $option_value['price']);}
 			<a class="sharesocial">SHARE: &nbsp;</a> 
 				<!-- AddThis Button END --> 				
 				<div class="addthis_default_style">
+<<<<<<< HEAD
 				<a onclick="PopupCenter('https://plus.google.com/share?url=https://gofootlounge.in','xtf','450','400');"><img class="piconcls" src="https://gofootlounge.in/image/social-icons/google_plus27.png"></a>&nbsp;&nbsp;<a onclick="PopupCenter('https://twitter.com/intent/tweet?text=@go_footlounge&','xtf','450','400');"><img class="piconcls" src="https://gofootlounge.in/image/social-icons/twittersmall1.png"></a>&nbsp; 
 				<a onclick="PopupCenter('http://www.facebook.com/sharer/sharer.php?u=https://gofootlounge.in','xtf','450','400');"> <img class="piconcls" src="https://gofootlounge.in/image/icon-facebook.png"></a>
+=======
+				<a onclick="PopupCenter('https://plus.google.com/share?url=http://gofootlounge.in','xtf','450','400');"><img class="piconcls" src="http://gofootlounge.in/image/social-icons/google_plus27.png"></a>&nbsp;&nbsp;<a onclick="PopupCenter('https://twitter.com/intent/tweet?text=@go_footlounge&','xtf','450','400');"><img class="piconcls" src="http://gofootlounge.in/image/social-icons/twittersmall1.png"></a>&nbsp; 
+				<a onclick="PopupCenter('http://www.facebook.com/sharer/sharer.php?u=http://gofootlounge.in','xtf','450','400');"> <img class="piconcls" src="http://gofootlounge.in/image/icon-facebook.png"></a>
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 				
 				</div>
 				<script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js"></script> 
@@ -1341,7 +1346,11 @@ $finval=str_replace("<span class='WebRupee'>Rs</span>","",$finalprice1); echo nu
         <h4 class="modal-title">EMAIL NOTIFICATION</h4>
       </div>
       <div class="modal-body">
+<<<<<<< HEAD
       <!--<div style="margin-bottom: 20px;" ><p>This product has been solded out! Kindly fill the following details, our executive will contact you in another 48 hours. <a href="https://gofootlounge.in/new-arrivals"><span style="color: #CD6927 " id="modal_content">Happy Shopping</span><a></p></div>-->
+=======
+      <!--<div style="margin-bottom: 20px;" ><p>This product has been solded out! Kindly fill the following details, our executive will contact you in another 48 hours. <a href="http://gofootlounge.in/new-arrivals"><span style="color: #CD6927 " id="modal_content">Happy Shopping</span><a></p></div>-->
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 		<div class="new_asearch_mb" ><p> Notify me when the product is back in Stock!</p></div>
 
        	<form class="form-horizontal">
@@ -1391,7 +1400,11 @@ $finval=str_replace("<span class='WebRupee'>Rs</span>","",$finalprice1); echo nu
       <div class="modal-footer new_asearch_padd">
       <span class="alert alert-success new_asearch_padd1" id="success_msgaa">send successfully</span>
       <span class="alert alert-danger new_asearch_padd1" id="failure_msg">sending failed</span>
+<<<<<<< HEAD
       	<img src="https://gofootlounge.in/image/loading_spinner.gif" alt="loading..." id="image_spinner">
+=======
+      	<img src="http://gofootlounge.in/image/loading_spinner.gif" alt="loading..." id="image_spinner">
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
         <button type="button" class="btn btn-default" id="closebtn" onclick="closemodal();">Close</button>
         <button type="button" class="btn btn-primary" id="sendbtn" onclick="sendnotify();">Send</button>
       </div>

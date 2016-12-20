@@ -119,7 +119,11 @@ if(flag==1){
       var orgimage=jsonres.image;
       var nimage=orgimage.replace(/\s/g,'%20'); 
      // var nimage=nimage.replace(' ','%20');  
+<<<<<<< HEAD
       var proimage="https://gofootlounge.in/image/"+nimage;
+=======
+      var proimage="http://gofootlounge.in/image/"+nimage;
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
      //var proimage="";
       var prohightlight=jsonres.prod_highlight;
       var prodesc=jsonres.description;
@@ -128,7 +132,11 @@ if(flag==1){
 
     $.ajax({
         type: "POST",
+<<<<<<< HEAD
         url: 'https://gofootlounge.in/sendmail.php', 
+=======
+        url: 'http://gofootlounge.in/sendmail.php', 
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
         data: {
           Nproductname:Nproductname,
           Nemail:Nemail,
@@ -373,7 +381,11 @@ function testme()
                      $("#success_msg1").hide();
                 }, 5000);
                 
+<<<<<<< HEAD
                 window.location.href='https://gofootlounge.in/new-arrivals'; 
+=======
+                window.location.href='http://gofootlounge.in/new-arrivals'; 
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
                 } 
                 else
                 {
@@ -651,7 +663,11 @@ function testme()
                      $("#success_msg1").hide();
                 }, 5000);
                 
+<<<<<<< HEAD
                 window.location.href='https://gofootlounge.in/new-arrivals'; 
+=======
+                window.location.href='http://gofootlounge.in/new-arrivals'; 
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
                 } 
                 else
                 {

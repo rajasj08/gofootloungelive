@@ -103,7 +103,11 @@ $(document).ready(function () {
 			    alert(resp);
 			      
 			    	if(resp==1){
+<<<<<<< HEAD
 			      window.location.href='https://gofootlounge.in/index.php?route=account/order/goorderinfos';  
+=======
+			      window.location.href='http://gofootlounge.in/index.php?route=account/order/goorderinfos';  
+>>>>>>> 33da1393a466c6ddba20eca81a243cfdea61b4e0
 			  		}
 			  		else
 			  		{
