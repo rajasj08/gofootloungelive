@@ -199,7 +199,7 @@ function valids()
 var searches = document.getElementById('category_id').value;
 var sval = document.getElementById('searchs').value; 
 
-window.location.href ="gofootlounge.in/index.php?route=product/search&search=" + sval + "&category_id=" +searches;
+window.location.href ="https://gofootlounge.in//index.php?route=product/search&search=" + sval + "&category_id=" +searches;
 }
 
 </script>
@@ -492,47 +492,47 @@ if( $modules ){
 								<ul>
 									
 									<!---<li class="col-lg-12 col-sm-12 col-xs-12">
-										<a href="gofootlounge.in/running-shoes">Top Brands</a>
+										<a href="https://gofootlounge.in//running-shoes">Top Brands</a>
 
 
 									
 										<ul> -->
 											
 											<li class="col-lg-3 col-sm-3 col-xs-12 first liststyle">
-												<a href="gofootlounge.in/men">Men</a>
+												<a href="https://gofootlounge.in//men">Men</a>
 																							
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
-												<a href="gofootlounge.in/women">Women</a>
+												<a href="https://gofootlounge.in//women">Women</a>
 																							
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
-												<a href="gofootlounge.in/kids">Kids</a>
+												<a href="https://gofootlounge.in//kids">Kids</a>
 																							
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
-												<a href="gofootlounge.in/fitness">Fitness</a>
+												<a href="https://gofootlounge.in//fitness">Fitness</a>
 																							
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
-												<a href="gofootlounge.in/apparel">Apparel</a>
+												<a href="https://gofootlounge.in//apparel">Apparel</a>
 																							
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
-												<a href="gofootlounge.in/flip-flops">Flip Flops</a>
+												<a href="https://gofootlounge.in//flip-flops">Flip Flops</a>
 																							
 											</li>
 
 											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
-												<a href="gofootlounge.in/lifestyle-sandals">LifeStyle Sandals</a>
+												<a href="https://gofootlounge.in//lifestyle-sandals">LifeStyle Sandals</a>
 																							
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 last liststyle">
-												<a href="gofootlounge.in/luggage-bags">Luggage Bags</a>
+												<a href="https://gofootlounge.in//luggage-bags">Luggage Bags</a>
 																							
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 last liststyle">
-												<a href="gofootlounge.in/running-shoes">Running Shoes</a>
+												<a href="https://gofootlounge.in//running-shoes">Running Shoes</a>
 																							
 											</li>
 											
@@ -558,43 +558,43 @@ if( $modules ){
 								<ul>
 									
 									<!---<li class="col-lg-12 col-sm-12 col-xs-12">
-										<a href="gofootlounge.in/running-shoes">Top Brands</a>
+										<a href="https://gofootlounge.in//running-shoes">Top Brands</a>
 
 
 									
 										<ul> -->
 											
 											<li class="col-lg-3 col-sm-3 col-xs-12 first liststyle">
-												<a href="gofootlounge.in/adidas-shoes-online">Adidas</a>
+												<a href="https://gofootlounge.in//adidas-shoes-online">Adidas</a>
 																							
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
-												<a href="gofootlounge.in/reebok-shoes-online">Reebok</a>
+												<a href="https://gofootlounge.in//reebok-shoes-online">Reebok</a>
 																							
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
-												<a href="gofootlounge.in/nike-shoes-online">Nike</a>
+												<a href="https://gofootlounge.in//nike-shoes-online">Nike</a>
 																							
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
-												<a href="gofootlounge.in/american-tourister-travel-bags-online">American Tourister</a>
+												<a href="https://gofootlounge.in//american-tourister-travel-bags-online">American Tourister</a>
 																							
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
-												<a href="gofootlounge.in/fila-shoes-online">Fila</a>
+												<a href="https://gofootlounge.in//fila-shoes-online">Fila</a>
 																							
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
-												<a href="gofootlounge.in/footlounge-sports-clothing-online">Foot Lounge</a>
+												<a href="https://gofootlounge.in//footlounge-sports-clothing-online">Foot Lounge</a>
 																							
 											</li>
 
 											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
-												<a href="gofootlounge.in/lee-cooper-shoes-online">Lee Cooper</a>
+												<a href="https://gofootlounge.in//lee-cooper-shoes-online">Lee Cooper</a>
 																							
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 last liststyle">
-												<a href="gofootlounge.in/puma-shoes-online">Puma</a>
+												<a href="https://gofootlounge.in//puma-shoes-online">Puma</a>
 																							
 											</li>
 											
@@ -619,28 +619,28 @@ if( $modules ){
 								<ul>
 									
 								<!---	<li class="col-lg-12 col-sm-12 col-xs-12">
-										<a href="gofootlounge.in/running-shoes">Information</a>
+										<a href="https://gofootlounge.in//running-shoes">Information</a>
 									
 										<ul> -->
 											
 											<li class="col-lg-3 col-sm-3 col-xs-12 first liststyle">
-												<a href="gofootlounge.in/about_us">About Us</a>
+												<a href="https://gofootlounge.in//about_us">About Us</a>
 																							
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
-												<a href="gofootlounge.in/delivery-information">Delivery Information</a>
+												<a href="https://gofootlounge.in//delivery-information">Delivery Information</a>
 																							
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
-												<a href="gofootlounge.in/terms-conditions">Terms &amp; Conditions</a>
+												<a href="https://gofootlounge.in//terms-conditions">Terms &amp; Conditions</a>
 																							
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
-												<a href="gofootlounge.in/privacy-policy-and-pisclaimer">Privacy Policy And Disclaimer</a>
+												<a href="https://gofootlounge.in//privacy-policy-and-pisclaimer">Privacy Policy And Disclaimer</a>
 																							
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 last liststyle">
-												<a href="gofootlounge.in/footlounge-return-policy">Return Policy</a>
+												<a href="https://gofootlounge.in//footlounge-return-policy">Return Policy</a>
 																							
 											</li>
 											
@@ -665,24 +665,24 @@ if( $modules ){
 								<ul>
 									
 								<!---	<li class="col-lg-12 col-sm-12 col-xs-12">
-										<a href="gofootlounge.in/running-shoes">Information</a>
+										<a href="https://gofootlounge.in//running-shoes">Information</a>
 									
 										<ul> -->
 											
 											<li class="col-lg-3 col-sm-3 col-xs-12 first liststyle">
-												<a href="gofootlounge.in/contact">Contact Us</a>
+												<a href="https://gofootlounge.in//contact">Contact Us</a>
 																							
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
-												<a href="gofootlounge.in/return">Returns</a>
+												<a href="https://gofootlounge.in//return">Returns</a>
 																							
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 liststyle">
-												<a href="gofootlounge.in/sitemap">Site Map</a>
+												<a href="https://gofootlounge.in//sitemap">Site Map</a>
 																							
 											</li>
 											<li class="col-lg-3 col-sm-3 col-xs-12 last liststyle">
-												<a href="gofootlounge.in/Footlounge-Frequently-Asked-Questions">FAQ</a>
+												<a href="https://gofootlounge.in//Footlounge-Frequently-Asked-Questions">FAQ</a>
 																							
 											</li>
 											

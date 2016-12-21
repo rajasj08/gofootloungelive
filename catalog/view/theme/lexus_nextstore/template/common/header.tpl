@@ -291,7 +291,7 @@ function valids()
 var searches = document.getElementById('category_id').value;
 var sval = document.getElementById('searchs').value; 
 
-window.location.href ="gofootlounge.in/index.php?route=product/search&search=" + sval + "&category_id=" +searches;
+window.location.href ="https://gofootlounge.in//index.php?route=product/search&search=" + sval + "&category_id=" +searches;
 }
 
 </script>
@@ -300,10 +300,10 @@ window.location.href ="gofootlounge.in/index.php?route=product/search&search=" +
 {
  "@context": "http://schema.org/",
   "@type": "WebSite",
-  "url": "gofootlounge.in/",
+  "url": "https://gofootlounge.in//",
   "potentialAction": {
     "@type": "SearchAction",
-     "target":"gofootlounge.in/search?term={search_term_string}",
+     "target":"https://gofootlounge.in//search?term={search_term_string}",
         "query-input":"required name=search_term_string"
   }
 }
@@ -342,11 +342,11 @@ src="https://www.facebook.com/tr?id=176279402782250&ev=PageView&noscript=1"
 							<ul class="links">								
 								<!--<li><a href="<?php echo $wishlist; ?>" id="wishlist-total"><i class="fa fa-list-alt"></i><?php echo $text_wishlist; ?></a></li> -->
 
-								<li><a href="gofootlounge.in/Footlounge-Frequently-Asked-Questions" id="help" data-toggle="tooltip" title="FAQ" data-placement="bottom"><i class="fa fa-info-circle"></i><?php echo $text_help; ?></a></li>
+								<li><a href="https://gofootlounge.in//Footlounge-Frequently-Asked-Questions" id="help" data-toggle="tooltip" title="FAQ" data-placement="bottom"><i class="fa fa-info-circle"></i><?php echo $text_help; ?></a></li>
 
 								<!--<li><a href="<?php echo $account; ?>"><i class="fa fa-user"></i><?php echo $text_account; ?></a></li>-->
 
-								<li><a href="gofootlounge.in/voucher" data-toggle="tooltip" title="Gift Cards" data-placement="bottom"><i class="fa fa-gift"></i><?php echo $text_giftcards; ?></a></li> 
+								<li><a href="https://gofootlounge.in//voucher" data-toggle="tooltip" title="Gift Cards" data-placement="bottom"><i class="fa fa-gift"></i><?php echo $text_giftcards; ?></a></li> 
 
 								<!--<li><a href="<?php echo $shopping_cart; ?>"><i class="fa fa-bookmark"></i><?php echo $text_shopping_cart; ?></a></li>-->
 								<li><a class="last" href="https://www.bluedart.com/maintracking.html" target="_blank" data-toggle="tooltip" title="Track Order" data-placement="bottom"><i class="fa fa-share"></i><?php echo 'Track Order'; ?></a></li>
@@ -447,15 +447,15 @@ src="https://www.facebook.com/tr?id=176279402782250&ev=PageView&noscript=1"
 
 							<div class="socialicons">
 
-								<div class="social-icon1"><a target="_blank" href="   https://in.pinterest.com/footloungeindia/"><img src="gofootlounge.in/image/social-icons/pinterest_27.png"></a></div>
+								<div class="social-icon1"><a target="_blank" href="   https://in.pinterest.com/footloungeindia/"><img src="https://gofootlounge.in//image/social-icons/pinterest_27.png"></a></div>
 
-								<div class="social-icon1"><a target="_blank" href=" https://plus.google.com/115256944391879546136/posts"><img src="gofootlounge.in/image/social-icons/google_plus27.png"></a></div>
+								<div class="social-icon1"><a target="_blank" href=" https://plus.google.com/115256944391879546136/posts"><img src="https://gofootlounge.in//image/social-icons/google_plus27.png"></a></div>
 
-								<div class="social-icon1"><a target="_blank" href="https://www.youtube.com/c/adidas"><img src="gofootlounge.in/image/social-icons/youtube-iconsmall.png" alt="Foot Lounge YouTube"></a></div>  
+								<div class="social-icon1"><a target="_blank" href="https://www.youtube.com/c/adidas"><img src="https://gofootlounge.in//image/social-icons/youtube-iconsmall.png" alt="Foot Lounge YouTube"></a></div>  
 								
-								<div class="social-icon1"><a target="_blank" href="https://www.instagram.com/go_footlounge"><img src="gofootlounge.in/image/social-icons/instagramsmall.png" alt="Foot Lounge Instagram"></a></div>
+								<div class="social-icon1"><a target="_blank" href="https://www.instagram.com/go_footlounge"><img src="https://gofootlounge.in//image/social-icons/instagramsmall.png" alt="Foot Lounge Instagram"></a></div>
 								 
-								<div class="social-icon1"><a target="_blank" href="https://twitter.com/go_footlounge"><img src="gofootlounge.in/image/social-icons/twittersmall1.png" alt="Foot LoungeTwitter"></a></div>	
+								<div class="social-icon1"><a target="_blank" href="https://twitter.com/go_footlounge"><img src="https://gofootlounge.in//image/social-icons/twittersmall1.png" alt="Foot LoungeTwitter"></a></div>	
 												
 							</div>
  
