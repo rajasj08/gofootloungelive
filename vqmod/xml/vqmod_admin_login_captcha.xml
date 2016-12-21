@@ -20,13 +20,13 @@
 				        $baseUrl = 'http';
 				    }
 				    return $baseUrl . '://' . $_SERVER['HTTP_HOST'] . '/';
-				}
+				}   
 				
 				?>
 
 				
 				<br />
-				<br />
+				<br />   
 
 			    <b><?php echo $entry_captcha; ?></b><br />
 			    <input type='text' name='captcha' value='<?php echo $captcha; ?>' />
