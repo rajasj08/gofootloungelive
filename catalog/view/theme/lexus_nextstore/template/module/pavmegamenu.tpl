@@ -65,7 +65,7 @@
        <span class="newspanpopup"><span class="alert alert-success" style=" padding:5px !important; margin-bottom:0px; display:none;"  id="success_msg">COD Available for Pincode <span id="dzipcode"></span></span>
       <span class="alert alert-danger" style=" padding:5px !important; margin-bottom:0px;display:none;" id="failure_msg">Prepaid Delivery Only for Pincode <span id="dzipcode1"></span></span><span class="alert alert-danger" style=" padding:5px !important; margin-bottom:0px;display:none;" id="failure_msg2">Invalid pincode <span id="dzipcode2"></span></span>  
       </span>
-      	<img src="http://192.168.1.105/projects/Elakkiya/footloungeupdate_042016/image/	loading_spinner.gif" alt="loading..." id="image_spinner">
+      	<img src="https://gofootlounge.in/image/loading_spinner.gif" alt="loading..." id="image_spinner">
         <button type="button" class="btn btn-default" id="closebtn" onclick="closecodmodal();">Close</button> 
         <button type="button" class="btn btn-primary" id="sendbtn" onclick="codstatus();">Submit</button>
       </div>
@@ -84,7 +84,7 @@
 	    	$(".travelneeds .cumenu:nth-of-type(1) ul li:first-child").css('display','none'); 
 	    	
 	    	$(".secondlink a").removeAttr('data-toggle'); 
-	    	$(".thirdlink a").removeAttr('data-toggle');
+	    	$(".thirdlink a").removeAttr('data-toggle'); 
 	    	$(".four a").removeAttr('data-toggle');
 	    	$(".main-menu-brand a").removeAttr('data-toggle');  
 	    	$(".travelneeds a").removeAttr('data-toggle'); 

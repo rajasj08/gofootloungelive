@@ -474,7 +474,7 @@ if( $modules ){
 		<div class="fl_404_container">   
     
     <div tabindex="501" class="screenreader">
-       <img src="http://192.168.1.105/projects/Elakkiya/footloungeupdatenew/catalog/view/theme/lexus_nextstore/image/page404/teamflcartoonshoes.png" style="width:100%;" alt="Page 404">
+       <img src="https://gofootlounge.in/catalog/view/theme/lexus_nextstore/image/page404/teamflcartoonshoes.png" style="width:100%;" alt="Page 404">
 
     <!--<p class="errorpage">404 <span> page not found</span></p>-->
     <p>The page you requested is no longer here.</p>
@@ -902,7 +902,7 @@ $class = $helper->calculateSpans( $ospans, $cols );
 			</form>
       </div>
       <div class="modal-footer"  style=" padding:10px 20px 10px !important; margin-top:0px;">
-     <span id="loadingspan"  style="display:none;"><img src="http://192.168.1.105/projects/Elakkiya/footloungeupdatenew/catalog/view/theme/lexus_nextstore/image/fb-loading.gif" alt="Loading"> </span>  
+     <span id="loadingspan"  style="display:none;"><img src="https://gofootlounge.in/catalog/view/theme/lexus_nextstore/image/fb-loading.gif" alt="Loading"> </span>  
       <span id="successcls1" style="display:inline;"></span>
 
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

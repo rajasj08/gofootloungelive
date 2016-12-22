@@ -133,7 +133,7 @@ jQuery(function($) {
       });
       var phoneno='<?php echo $text_contact; ?>';
 
-     //s $cache.html('<div class="col-md-12 mview"><div id="logo1" class="m-logo-store"><a href="http://192.168.1.105/projects/Elakkiya/footloungeupdate_042016/"><img src="http://192.168.1.105/projects/Elakkiya/footloungeupdate_042016/image/data/lo2logo.png" title="Foot Lounge" alt="Foot Lounge" class="m-logo-image"></a></div><div class="m-logo-store1"><div class="top-contact1"><i class="fa fa-phone"></i>'+phoneno+'</div></div></div>');
+     //s $cache.html('<div class="col-md-12 mview"><div id="logo1" class="m-logo-store"><a href="https://gofootlounge.in/"><img src="https://gofootlounge.in/image/data/lo2logo.png" title="Foot Lounge" alt="Foot Lounge" class="m-logo-image"></a></div><div class="m-logo-store1"><div class="top-contact1"><i class="fa fa-phone"></i>'+phoneno+'</div></div></div>');
       $("#logo1").hide();  
      $('.mview').show();
     

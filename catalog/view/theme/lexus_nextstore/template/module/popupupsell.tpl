@@ -162,7 +162,7 @@ function checkupsellproduct(productid,upsellid,upsellproductprice,upsellproducts
           if(resp)
           {
           	addToCartpopup(productid,1,optionid,optionvalueid);
-         //window.location.href="http://192.168.1.105/projects/Elakkiya/footloungeupdate_042016/index.php?route=product/product&product_id="+productid;     
+         //window.location.href="https://gofootlounge.in/index.php?route=product/product&product_id="+productid;     
       		} 
         }
      });
@@ -179,7 +179,7 @@ function checkupsellproduct1(productid,upsellid,upsellproductprice,upsellproduct
   	flag=0;
   	$("#optionvalueinfo"+productid).css('border','1px solid #F00');
   }
-  else
+  else 
   {
   	$("#optionvalueinfo"+productid).css('border','1px solid #ccc');
   }*/ 
