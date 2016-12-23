@@ -4,11 +4,11 @@ class ControllerCommonSeoUrl extends Controller {
 
 	private $url_list = array (
         'common/home'       => '',
-        'checkout/cart'     => 'cart',
+       // 'checkout/cart'     => 'cart',
         'account/register'  => 'register',
         'account/voucher'	=> 'voucher',
         'account/wishlist'  => 'wishlist',
-        'checkout/checkout' => 'checkout',
+       //'checkout/checkout' => 'checkout',
         'account/login'     => 'login',
         'product/special'   => 'online-shopping-offers',
         'affiliate/account' => 'affiliate',
@@ -25,7 +25,7 @@ class ControllerCommonSeoUrl extends Controller {
 		'pavdeals/deals' 	=> 'deals', 
 		'product/search'    => 'search'     
     ); 
-
+  
 	public function index() {  
 		// Add rewrite to url class
 		
