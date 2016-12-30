@@ -130,13 +130,15 @@ class ControllerProductBestseller extends Controller {
 			}
 			
 			if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-				$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
+				/*$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));*/
+                               $price = $this->currency->format($this->tax->calculate($result['price'], 0, $this->config->get('config_tax')));
 			} else {
 				$price = false;
 			}
 			
 			if ((float)$result['bestseller']) {
-				$bestseller = $this->currency->format($this->tax->calculate($result['bestseller'], $result['tax_class_id'], $this->config->get('config_tax')));
+				/*$bestseller = $this->currency->format($this->tax->calculate($result['bestseller'], $result['tax_class_id'], $this->config->get('config_tax')));*/
+                                $bestseller = $this->currency->format($this->tax->calculate($result['bestseller'], 0, $this->config->get('config_tax')));
 			} else {
 				$bestseller = false;
 			}	
@@ -162,7 +164,8 @@ class ControllerProductBestseller extends Controller {
 				'bestseller'     => $bestseller,
 				'tax'         => $tax,
 				'rating'      => $result['rating'],
-				'special'      => $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax'))),
+				/*'special'      => $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax'))),*/
+                                'special'      => $this->currency->format($this->tax->calculate($result['special'], 0, $this->config->get('config_tax'))),
 				'reviews'     => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
 				'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url),
 				'is_newarrival' => $productNewArrival

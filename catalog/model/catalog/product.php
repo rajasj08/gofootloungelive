@@ -997,6 +997,34 @@ AND (ps.date_end = '0000-00-00' OR ps.date_end > NOW())) ORDER BY ps.priority AS
 
         }   
 
+         //get mrp price for the product 
+        public function getprodmrppricevalue($productid)
+        {
+            
+            $query = $this->db->query("SELECT price FROM `" . DB_PREFIX . "product` where product_id=$productid"); 
+          return $query->row['price'];
+        } 
+   
+
+        public function saveoutofstockuser($emailid,$mobileno) //save out of stock customer details
+        {
+            $emailid=$emailid.trim();
+
+             $query1 = $this->db->query("SELECT os_cust_id FROM `" . DB_PREFIX . "outofstock_customers` where os_mailid='".$emailid."'");
+            $custid= $query1->row['os_cust_id']; 
+           if($query1->num_rows >0)
+           {
+
+                 $this->db->query("Update " . DB_PREFIX . "outofstock_customers
+ SET os_mailid ='".$emailid."',os_phoneno='".$mobileno.trim()."',os_createddate='".date('Y-m-d')."' where os_cust_id=$custid");
+           }    
+           else
+           { 
+            $this->db->query("Insert into " . DB_PREFIX . "outofstock_customers
+ SET os_mailid ='".$emailid."',os_phoneno='".$mobileno.trim()."',os_createddate='".date('Y-m-d')."'");
+           }
+        } 
+
 	
 }
 ?>

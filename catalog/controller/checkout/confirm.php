@@ -25,8 +25,8 @@ class ControllerCheckoutConfirm extends Controller {
 			unset($this->session->data['shipping_method']);
 			unset($this->session->data['shipping_methods']);
 		}
-
-                $this->load->model('checkout/order');
+		
+		$this->load->model('checkout/order');
 		if($this->customer->isLogged())
     		{
 
@@ -34,8 +34,7 @@ class ControllerCheckoutConfirm extends Controller {
     			$this->data['smsalertcode'] =$smsalert;
 
     		}	
-    		else{$this->data['smsalertcode']='';}
-
+    		else{$this->data['smsalertcode']='';}		
 		
 		// Validate if payment address has been set.
 		$this->load->model('account/address');
@@ -62,8 +61,25 @@ class ControllerCheckoutConfirm extends Controller {
 		
 		// Validate minimum quantity requirments.			
 		$products = $this->cart->getProducts();
-				
+
+		$bagtot=0; 		
 		foreach ($products as $product) {
+
+                          // get Origional price for  the product
+                             $this->load->model('catalog/product');
+                             $prod_orgprice=$this->model_catalog_product->getprodmrppricevalue($product['product_id']);
+                              
+$bagtot+=round($prod_orgprice * $product['quantity']); 
+                             //assign org price value
+                             if ($prod_orgprice) {
+                                        $n_orgprice = $this->currency->format($this->tax->calculate($prod_orgprice, 0, $this->config->get('config_tax')));   
+					/*$price = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')));*/
+				} else {
+					$n_orgprice = false;
+				}
+
+
+    
 			$product_total = 0;
 				
 			foreach ($products as $product_2) {
@@ -78,6 +94,14 @@ class ControllerCheckoutConfirm extends Controller {
 				break;
 			}				
 		}
+ 
+                if ($bagtot) {
+                                       // $this->data['bagtot'] = $this->currency->format($this->tax->calculate($bagtot, 0, $this->config->get('config_tax'))); 
+                                           $this->data['bagtot'] =$bagtot ;  
+					/*$price = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')));*/
+				} else {
+					$this->data['bagtot'] = false;
+				} 
 						
 		if (!$redirect) {
 			$total_data = array();
@@ -86,32 +110,68 @@ class ControllerCheckoutConfirm extends Controller {
 			 
 			$this->load->model('setting/extension');
 			
-			$sort_order = array(); 
+			// Display prices
+			if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
+				$sort_order = array(); 
+				
+				$results = $this->model_setting_extension->getExtensions('total');
+				
 			
-			$results = $this->model_setting_extension->getExtensions('total');
-			
-			foreach ($results as $key => $value) {
-				$sort_order[$key] = $this->config->get($value['code'] . '_sort_order');
-			}
-			
-			array_multisort($sort_order, SORT_ASC, $results);
-			
-			foreach ($results as $result) {
-				if ($this->config->get($result['code'] . '_status')) {
-					$this->load->model('total/' . $result['code']);
-		
-					$this->{'model_total_' . $result['code']}->getTotal($total_data, $total, $taxes);
+				foreach ($results as $key => $value) {
+					$sort_order[$key] = $this->config->get($value['code'] . '_sort_order');
 				}
-			}
+				
+			     //print_r('<pre>'); print_r($results); die; 
+
+				foreach ($results as $result) {
+					
+					if ($this->config->get($result['code'] . '_status')) {
+						$this->load->model('total/' . $result['code']);
+					
+					 $this->{'model_total_' . $result['code']}->getTotal($total_data, $total, $taxes);
+					 
+					}
+					
+
+					$sort_order = array(); 
+				
+					foreach ($total_data as $key => $value) {
+						$sort_order[$key] = $value['sort_order'];
+					}
+		
+					array_multisort($sort_order, SORT_ASC, $total_data);			
+				}
+
 			
-			$sort_order = array(); 
-		  
-			foreach ($total_data as $key => $value) {
-				$sort_order[$key] = $value['sort_order'];
 			}
-	
-			array_multisort($sort_order, SORT_ASC, $total_data);
-	
+
+			if(isset($total_data[1]['code']))
+             {
+                   $cont=count($total_data)-2;
+                  if($total_data[1]['code'] == 'shipping'){
+           
+                        $temp = $total_data[1];
+                        $total_data[1] = $total_data[$cont];
+                        $total_data[$cont] = $temp;
+                 }
+               }
+                if(isset($total_data[1]['code']) && isset($total_data[2]['code'])) {
+                 if($total_data[1]['code'] == 'coupon' && $total_data[2]['code'] == 'tax'){
+           
+                        $temp = $total_data[1];
+                        $total_data[1] = $total_data[2];
+                        $total_data[2] = $temp;
+                 }
+                /*else if($total_data[2]['code'] == 'coupon' && $total_data[3]['code'] == 'tax')
+                { 
+                    $temp = $total_data[2];
+                        $total_data[2] = $total_data[3];
+                        $total_data[3] = $temp;
+                } */  
+                   
+  
+              }
+			//print_r('<pre>'); print_r($total_data); die; 
 			$this->language->load('checkout/checkout');
 			
 			$data = array();
@@ -228,7 +288,7 @@ class ControllerCheckoutConfirm extends Controller {
 			}
 			
 			$product_data = array();
-		
+		 
 			foreach ($this->cart->getProducts() as $product) {
 				$option_data = array();
 	
@@ -336,6 +396,8 @@ class ControllerCheckoutConfirm extends Controller {
 						
 			$this->load->model('checkout/order');
 			
+			
+			
 			$this->session->data['order_id'] = $this->model_checkout_order->addOrder($data);
 			
 			$this->data['column_name'] = $this->language->get('column_name');
@@ -360,9 +422,30 @@ class ControllerCheckoutConfirm extends Controller {
 										
 					$option_data[] = array(
 						'name'  => $option['name'],
-						'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+						'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value),
+						'option_val_id' => $option['product_option_value_id']
+						
 					);
 				}  
+
+                                // get Origional price for  the product
+                            /* $this->load->model('catalog/product');
+                             $prod_orgprice=$this->model_catalog_product->getprodmrppricevalue($product['product_id']);
+$bagtot+=round($prod_orgprice * $product['quantity']); 
+                             //assign org price value
+                             if ($prod_orgprice) {
+                                        $n_orgprice = $this->currency->format($this->tax->calculate($prod_orgprice, 0, $this->config->get('config_tax')));  */ 
+					/*$price = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')));*/
+				/*} else {
+					$n_orgprice = false;
+				}*/
+                               // finding discount for the product
+                                 $scda=$product['price'];
+				//$scda = preg_replace('/\D/', '', $scda);
+				$scda1 = $prod_orgprice;
+				//$scda1 = preg_replace('/\D/', '', $scda1);
+				$disc_percent =   round((($scda1  - $scda)/$scda1)*100, 0); 
+                              // echo $sum_total1; die; 
 	 
 				$this->data['products'][] = array(
 					'product_id' => $product['product_id'],
@@ -371,11 +454,24 @@ class ControllerCheckoutConfirm extends Controller {
 					'option'     => $option_data,
 					'quantity'   => $product['quantity'],
 					'subtract'   => $product['subtract'],
-					'price'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax'))),
-					'total'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity']),
-					'href'       => $this->url->link('product/product', 'product_id=' . $product['product_id'])
+					//'price'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax'))),
+					//'total'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity']),
+                                        'price'      => $this->currency->format($this->tax->calculate($product['price'], 0, $this->config->get('config_tax'))),
+					'total'      => $this->currency->format($this->tax->calculate($product['price'], 0, $this->config->get('config_tax')) * $product['quantity']),   
+					'href'       => $this->url->link('product/product', 'product_id=' . $product['product_id']),
+                                        'prod_subtot'  =>$n_orgprice,
+                                         'discount' => $disc_percent
 				); 
 			} 
+                        $data['bagtotpriceval']=$bagtot;
+
+                        if ($bagtot) {
+                                        $this->data['bagtot'] = $this->currency->format($this->tax->calculate($bagtot, 0, $this->config->get('config_tax')));   
+					/*$price = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')));*/
+				} else {
+					$this->data['bagtot'] = false;
+				} 
+
 			
 			// Gift Voucher
 			$this->data['vouchers'] = array();
@@ -395,7 +491,7 @@ class ControllerCheckoutConfirm extends Controller {
 		} else {
 			$this->data['redirect'] = $redirect;
 		}			
-		
+		//print_r('<pre>'); print_r($this->data['payment']); die; 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/confirm.tpl')) {
 			$this->template = $this->config->get('config_template') . '/template/checkout/confirm.tpl';
 		} else {

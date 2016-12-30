@@ -254,7 +254,7 @@ $(function(){
 
 						<!-----code did by Elakkiya.R-------->
 						<?php if($option['name']=='Size')
-							{
+							{ 
 								$sizecount=count($option['option_value']);
 
 							}  ?>
@@ -987,7 +987,7 @@ $(document).ready(function() {
         <button type="button" class="btn btn-primary" id="sendbtn" onclick="sendnotify();">Send</button>
       </div>
     </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog --> 
+  </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
 <!-- Google Code for Remarketing Tag -->

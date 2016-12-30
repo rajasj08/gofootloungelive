@@ -177,11 +177,11 @@ class ControllerSaleOrder extends Controller {
     
 
       //$this->load->model('sale/sendsms');     
-      //include('https://gofootlounge.in/sendsms.php'); 
+      //include('http://192.168.1.105/projects/Elakkiya/footloungeupdate_042016/sendsms.php'); 
 
       
         // 
-        //include 'https://gofootlounge.in/sendsms.php';  
+        //include 'http://192.168.1.105/projects/Elakkiya/footloungeupdate_042016/sendsms.php';  
         // echo $this->request->get['filter_order_id']; die;
        
        

@@ -84,11 +84,31 @@ $categoryPzoom 	= $categoryConfig['category_pzoom'];
 								
 								foreach( $products as $i => $product ):  $i=$i+1;?>
 								<?php  	 
-			$scd= $product['price'];
-			$scd = preg_replace('/\D/', '', $scd);
-			$scd1 = $product['special'];
-			$scd1 = preg_replace('/\D/', '', $scd1);
-			$sum_total =   round((($scd  - $scd1)/$scd)*100, 0);
+									$scd= $product['price'];
+									$scd = preg_replace('/\D/', '', $scd);
+									$scd1 = $product['special'];
+									$scd1 = preg_replace('/\D/', '', $scd1);
+									$sum_total =   round((($scd  - $scd1)/$scd)*100, 0);
+
+
+									foreach($product['size'] as $datan)
+									{
+									 if($datan['name'] == 'Size')
+									  {$sizearrayq=array(); 
+									$sizearray=array();
+									      foreach($datan['option_value'] as $data1)
+									        {      
+									            $sizearray[]=$data1['name']; 
+									           if($data1['quantity'] > 0)
+									           {
+									              $sizearrayq[]=$data1['name'];
+									           }
+									        }
+									  } 
+									}
+
+
+
 		?>
 									<?php if( $i%$cols == 1 || $cols == 1): ?>
 										<div class="row new_list_mb">
@@ -238,22 +258,45 @@ $categoryPzoom 	= $categoryConfig['category_pzoom'];
 														<div class="deal-collection">
 															<div class="deal_detail">
 																<ul>
-																	<li>
+																	<!--<li>
 																		<span><?php echo $this->language->get("text_discount");?></span>
 																		<span class="deal_detail_num"><?php echo $product['deal_discount'];?>%</span>
-																	</li>
+																	</li> -->
 																	<li>
 																		<span><?php echo $this->language->get("text_you_save");?></span>
 																		<span class="deal_detail_num"><span class="price"><?php echo $product["save_price"]; ?></span></span>
 																	</li>
-																	<li>
+																	<!--<li>
 																		<span> <?php echo $this->language->get("text_bought");?> </span>
 																		<span class="deal_detail_num"><?php echo $product['bought'];?></span>
-																	</li>
+																	</li> -->
 																</ul>
 															</div>
 															<div class="deal-qty-box">
-																<?php echo sprintf($this->language->get("text_quantity_deal"), $product["quantity"]);?>
+																<?php //echo sprintf($this->language->get("text_quantity_deal"), $product["quantity"]);?>
+                                                                
+																<?php 
+                                                                 
+																$resultq='';  if($sizearrayq) { 
+
+																	$resultq=array_diff($sizearray,$sizearrayq);
+
+																	if($resultq)
+																	{
+																	/*$qdata=''; 
+
+																	foreach($sizearrayq as &$qdata)
+																	{
+																	 $qdata = 'Size '.$qdata;
+
+																	}
+																	*/
+
+
+																	$sizestr=implode(", ",$sizearrayq);
+																	echo 'Hurry, Just Size '.$sizestr.' left'; 
+																	}
+																	}?>
 															</div>
 															<div class="item-detail">
 																<div class="timer-explain">(<?php echo date($this->language->get("date_format_short"), strtotime($product['date_end_string'])); ?>)</div>

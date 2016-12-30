@@ -9,6 +9,7 @@ $_['text_attribute_group']             = 'Attribute Groups';
 $_['text_backup']                      = 'Backup / Restore';
 $_['text_export']                      = 'Export / Import';
 $_['text_abandoned']                      = 'Abandoned Users';
+$_['text_allcustlist']                      = 'All Customers';
 $_['text_banner']                      = 'Banners';
 $_['text_catalog']                     = 'Catalog';
 $_['text_category']                    = 'Categories';

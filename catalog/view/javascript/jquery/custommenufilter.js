@@ -110,7 +110,10 @@ if(flag==1){
     type: "POST",
     url: 'index.php?route=product/product/getproductinfos/',   
     data: {
-      product_id:npro_id
+      product_id:npro_id,
+      Nemail:Nemail,
+      //Nname:Nname,
+      Nmobileno:Nmobileno,
     },
     success: function(jsonresp){
   
@@ -119,7 +122,7 @@ if(flag==1){
       var orgimage=jsonres.image;
       var nimage=orgimage.replace(/\s/g,'%20'); 
      // var nimage=nimage.replace(' ','%20');  
-      var proimage="https://gofootlounge.in/image/"+nimage;
+      var proimage="http://www.footlounge.in/image/"+nimage;
      //var proimage="";
       var prohightlight=jsonres.prod_highlight;
       var prodesc=jsonres.description;
@@ -128,7 +131,7 @@ if(flag==1){
 
     $.ajax({
         type: "POST",
-        url: 'https://gofootlounge.in/sendmail.php', 
+        url: 'http://www.footlounge.in/sendmail.php', 
         data: {
           Nproductname:Nproductname,
           Nemail:Nemail,
@@ -373,7 +376,7 @@ function testme()
                      $("#success_msg1").hide();
                 }, 5000);
                 
-                window.location.href='https://gofootlounge.in/new-arrivals'; 
+                window.location.href='http://www.footlounge.in/new-arrivals'; 
                 } 
                 else
                 {
@@ -651,7 +654,7 @@ function testme()
                      $("#success_msg1").hide();
                 }, 5000);
                 
-                window.location.href='https://gofootlounge.in/new-arrivals'; 
+                window.location.href='http://testourworks.com/footlounge/new-arrivals'; 
                 } 
                 else
                 {

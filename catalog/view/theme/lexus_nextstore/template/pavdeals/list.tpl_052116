@@ -381,5 +381,5 @@ $categoryPzoom 	= $categoryConfig['category_pzoom'];
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
- 
+
 </script>

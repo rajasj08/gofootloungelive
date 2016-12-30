@@ -4,8 +4,8 @@
 			<i class="icon-cart fa fa-shopping-cart"></i>
 			<em class="shapes left"></em>
 		</div>
-		<div class="cart-inner media-body">
-			<h4><?php echo $text_your_cart; ?></h4>
+		<div class="cart-inner media-body dfd">
+			<h4 class="reducemybottom"><?php echo $text_your_cart; ?></h4>
 			<a><span id="cart-total"><?php echo $text_items; ?></span><i class="fa fa-angle-down"></i></a>
 		</div>
 	</div>
@@ -32,7 +32,8 @@
 					</td>
 					<td class="quantity">x&nbsp;<?php echo $product['quantity']; ?></td>
 					<td class="total"><?php echo $product['total']; ?></td>
-					<td class="remove"><img src="catalog/view/theme/<?php echo $this->config->get('config_template');?>/image/remove-small.png" alt="<?php echo $button_remove; ?>" title="<?php echo $button_remove; ?>" onclick="(getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') ? location = 'index.php?route=checkout/cart&remove=<?php echo $product['key']; ?>' : $('#cart').load('index.php?route=module/cart&remove=<?php echo $product['key']; ?>' + ' #cart > *');" /></td>
+					<!----catalog/view/theme/<?php echo $this->config->get('config_template');?>/image/remove-small.png-->
+					<td class="remove"><img src="image/xicon.png" alt="<?php echo $button_remove; ?>" title="<?php echo $button_remove; ?>" onclick="(getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') ? location = 'index.php?route=checkout/cart&remove=<?php echo $product['key']; ?>' : $('#cart').load('index.php?route=module/cart&remove=<?php echo $product['key']; ?>' + ' #cart > *');" /></td>
 				</tr>
 				<?php } ?>
 				<?php foreach ($vouchers as $voucher) { ?>
@@ -48,22 +49,35 @@
 		</div>
 		<div class="mini-cart-total">
 			<table>
-				<?php foreach ($totals as $total) { ?>
+   				<?php foreach ($totals as $total) { 
+                                     if($total['code']=='coupon')
+						{
+							$couponvalue=$total['value'];
+						}
+						if($total['code']=='total')
+						{
+							$total['value']=$total['value']+round($couponvalue); 
+							$total['text']=$this->currency->format($total['value']); 
+						}
+                                                if($total['code']=='shipping')
+                                                { $total['title']='Delivery';}
+?>
 				<tr>
 					<td class="right"><b><?php echo $total['title']; ?>:</b></td>
-					<td class="right"><?php echo $total['text']; ?></td>
+					<td class="right <?php if($total['code']=='shipping'){ echo "mytotshipcolorcls"; } ?>"><?php echo $total['text']; ?></td>
 				</tr>
 				<?php } ?>
 			</table>
 		</div>
-		<div class="checkout">
+		<div class="checkout <?php echo $order_id; ?>"> 
 			<a href="<?php echo $cart; ?>" class="button btn btn-theme-default checkoutnbtn"><?php echo $text_cart; ?></a> 
-			<a onclick="smartcheckoutpopup();" class="button btn btn-theme-default"> CHECKOUT NOW <?php //echo $text_checkout; ?></a>
+			<a onclick="smartcheckoutpopup();" class="button btn btn-theme-default">CHECKOUT NOW<?php //echo $text_checkout; ?></a>
 		</div>
 		<?php } else { ?>
 		<div class="empty"><?php echo $text_empty; ?></div>
 		<div class="continue-shopping"><a href="new-arrivals">Continue Shopping</a></div>
 		<?php } ?>
+		<p class="extracontent">Free Shipping | Free 15 day Returns | Secured Checkout</p>
 		</div>
 	</div>  
 </div>

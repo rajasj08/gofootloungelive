@@ -83,8 +83,8 @@
 	    	$(".four .cumenu1:nth-of-type(1) ul li:first-child").css('display','none'); 
 	    	$(".travelneeds .cumenu:nth-of-type(1) ul li:first-child").css('display','none'); 
 	    	
-	    	$(".secondlink a").removeAttr('data-toggle'); 
-	    	$(".thirdlink a").removeAttr('data-toggle'); 
+	    	$(".secondlink a").removeAttr('data-toggle');  
+	    	$(".thirdlink a").removeAttr('data-toggle');
 	    	$(".four a").removeAttr('data-toggle');
 	    	$(".main-menu-brand a").removeAttr('data-toggle');  
 	    	$(".travelneeds a").removeAttr('data-toggle'); 
@@ -124,7 +124,7 @@
 
 	function showlink(link)//show link
 	{
-		window.location.href='https://gofootlounge.in/'+link;    
+		window.location.href='https://gofootlounge.in/'+link;  
 		
 	}
-</script> 
+</script>  

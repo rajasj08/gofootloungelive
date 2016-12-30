@@ -1007,4 +1007,4 @@ $finval=str_replace("<span class='WebRupee'>Rs</span>","",$finalprice1); echo nu
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
-</div><!-- /.modal --> 
+</div><!-- /.modal -->

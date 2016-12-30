@@ -1,6 +1,4 @@
-<?php
-
-static $registry = NULL;
+<?php static $registry = NULL;
 error_reporting(-1);
 
 // Error Handler
@@ -2769,8 +2767,6 @@ protected function sizegetOptions( &$database, $languageId ) {
 
 
 
-
-
 		$j = 0;
 		$worksheet->getColumnDimensionByColumn($j++)->setWidth(max(strlen('model'),10)+1);
 		$worksheet->getColumnDimensionByColumn($j++)->setWidth(max(strlen('option_value_id'),4)+1);
@@ -3378,12 +3374,18 @@ protected function populateOptionsWorksheet( &$worksheet, &$database, $languageI
 		// The actual product rewards data
 		$i += 1;
 		$j = 0;
+
 		$rewards = $this->getRewards( $database, $languageId );
 		foreach ($rewards as $row) {
 			$worksheet->getRowDimension($i)->setRowHeight(13);
 			$this->setCell( $worksheet, $i, $j++, $row['product_id'] );
 			$this->setCell( $worksheet, $i, $j++, $row['name'] );
 			$this->setCell( $worksheet, $i, $j++, $row['points'] );
+                   
+                        $this->setCell( $worksheet, $i, $j++, '121' );
+			$this->setCell( $worksheet, $i, $j++, 'sdfdsfdf' );
+			$this->setCell( $worksheet, $i, $j++, 'sdfsdfsdf' );
+
 			$i += 1;
 			$j = 0;
 		}
@@ -3405,21 +3407,26 @@ protected function populateOptionsWorksheet( &$worksheet, &$database, $languageI
 
 
 	function download() {
+
+
+
+               ini_set('memory_limit', '1024M'); //Extend memory limit 
 		// we use our own error handler
-		global $registry;
+               	global $registry;
 		$registry = $this->registry;
-		set_error_handler('error_handler_for_export',E_ALL);
+		set_error_handler('error_handler_for_export',E_ALL); 
 		register_shutdown_function('fatal_error_shutdown_handler_for_export');
 
 		// we use the PHPExcel package from http://phpexcel.codeplex.com/
 		$cwd = getcwd();
 		chdir( DIR_SYSTEM.'PHPExcel' );
 		require_once( 'Classes/PHPExcel.php' );
-		chdir( $cwd );
+                chdir( $cwd );
 
 		try {
 			// set appropriate timeout limit
 			set_time_limit( 1800 );
+
 
 			$database =& $this->db;
 			$languageId = $this->getDefaultLanguageId($database);
@@ -3491,6 +3498,8 @@ protected function populateOptionsWorksheet( &$worksheet, &$database, $languageI
 				)
 			);
 
+
+                       
 			// creating the Categories worksheet
 			$workbook->setActiveSheetIndex(0);
 			$worksheet = $workbook->getActiveSheet();
@@ -3537,6 +3546,7 @@ protected function populateOptionsWorksheet( &$worksheet, &$database, $languageI
 			$this->populateSpecialsWorksheet( $worksheet, $database, $languageId, $priceFormat, $boxFormat, $textFormat );
 			$worksheet->freezePaneByColumnAndRow( 1, 2 );
 
+
 			// creating the Discounts worksheet
 			$workbook->createSheet();
 			$workbook->setActiveSheetIndex(6);
@@ -3554,14 +3564,18 @@ protected function populateOptionsWorksheet( &$worksheet, &$database, $languageI
 			$worksheet->freezePaneByColumnAndRow( 1, 2 );
 
 			$workbook->setActiveSheetIndex(0);
+                         
+                       
 
-			// redirect output to client browser
+			 // redirect output to client browser
 			header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
 			header('Content-Disposition: attachment;filename="backup_categories_products.xlsx"');
-			header('Cache-Control: max-age=0');
-			$objWriter = PHPExcel_IOFactory::createWriter($workbook, 'Excel2007');
-			$objWriter->save('php://output');
+			header('Cache-Control: max-age=0');                    
+ //ob_end_clean(); 
 
+			$objWriter = PHPExcel_IOFactory::createWriter($workbook, 'Excel2007');
+                        // $this->ob_clean();   
+			$objWriter->save('php://output');
 			// Clear the spreadsheet caches
 			$this->clearSpreadsheetCache();
 			exit;
@@ -3570,7 +3584,7 @@ protected function populateOptionsWorksheet( &$worksheet, &$database, $languageI
 			$errstr = $e->getMessage();
 			$errline = $e->getLine();
 			$errfile = $e->getFile();
-			$errno = $e->getCode();
+			$errno = $e->getCode(); 
 			$this->session->data['export_error'] = array( 'errstr'=>$errstr, 'errno'=>$errno, 'errfile'=>$errfile, 'errline'=>$errline );
 			if ($this->config->get('config_error_log')) {
 				$this->log->write('PHP ' . get_class($e) . ':  ' . $errstr . ' in ' . $errfile . ' on line ' . $errline);
@@ -3585,7 +3599,7 @@ protected function populateOptionsWorksheet( &$worksheet, &$database, $languageI
 
 	function sizedownload() {
 
-               
+                ini_set('memory_limit', '1024M'); //Extend memory limit 
 		global $registry;
 		$registry = $this->registry;
 		set_error_handler('error_handler_for_export',E_ALL);
@@ -3713,6 +3727,5 @@ protected function populateOptionsWorksheet( &$worksheet, &$database, $languageI
 	
 
 
-}
-?>
+} ?>
 

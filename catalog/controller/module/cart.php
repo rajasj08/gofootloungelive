@@ -26,31 +26,43 @@ class ControllerModuleCart extends Controller {
 		// Display prices
 		if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
 			$sort_order = array(); 
+				
+				$results = $this->model_setting_extension->getExtensions('total');
+				
 			
-			$results = $this->model_setting_extension->getExtensions('total');
-			
-			foreach ($results as $key => $value) {
-				$sort_order[$key] = $this->config->get($value['code'] . '_sort_order');
-			}
-			
-			array_multisort($sort_order, SORT_ASC, $results);
-			
-			foreach ($results as $result) {
-				if ($this->config->get($result['code'] . '_status')) {
-					$this->load->model('total/' . $result['code']);
-		
-					$this->{'model_total_' . $result['code']}->getTotal($total_data, $total, $taxes);
+				foreach ($results as $key => $value) {
+					$sort_order[$key] = $this->config->get($value['code'] . '_sort_order');
 				}
 				
-				$sort_order = array(); 
-			  
-				foreach ($total_data as $key => $value) {
-					$sort_order[$key] = $value['sort_order'];
+			     //print_r('<pre>'); print_r($results); die; 
+
+				foreach ($results as $result) {
+					
+					if ($this->config->get($result['code'] . '_status')) {
+						$this->load->model('total/' . $result['code']);
+					
+					 $this->{'model_total_' . $result['code']}->getTotal($total_data, $total, $taxes);
+					 
+					}
+					
+
+					$sort_order = array(); 
+				
+					foreach ($total_data as $key => $value) {
+						$sort_order[$key] = $value['sort_order'];
+					}
+		
+					array_multisort($sort_order, SORT_ASC, $total_data);			
 				}
 	
-				array_multisort($sort_order, SORT_ASC, $total_data);			
-			}		
 		}
+                 if(isset($total_data[1]['code']) && isset($total_data[2]['code'])) {
+                 if($total_data[1]['code'] == 'coupon' && $total_data[2]['code'] == 'tax'){
+           
+                        $temp = $total_data[1];
+                        $total_data[1] = $total_data[2];
+                        $total_data[2] = $temp;
+                 } }
 		
 		$this->data['totals'] = $total_data;
 		
@@ -58,6 +70,7 @@ class ControllerModuleCart extends Controller {
 		$this->data['text_your_cart'] = $this->language->get('text_your_cart');
 		
 		$this->data['text_items'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));
+                
 		$this->data['text_empty'] = $this->language->get('text_empty');
 		$this->data['text_cart'] = $this->language->get('text_cart');
 		$this->data['text_checkout'] = $this->language->get('text_checkout');
@@ -224,7 +237,8 @@ class ControllerModuleCart extends Controller {
 				else
 							{
 								if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-									$total = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity']);
+									/*$total = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity']);*/
+$total = $this->currency->format($this->tax->calculate($product['price'], 0, $this->config->get('config_tax')) * $product['quantity']);
 								} else {
 									$total = false;
 								} 
@@ -235,9 +249,11 @@ class ControllerModuleCart extends Controller {
 			
 			// Display prices
 			if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-				$price = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')));
+				/*$price = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')));*/
+
+$price = $this->currency->format($this->tax->calculate($product['price'], 0, $this->config->get('config_tax')));
 			} else {
-				$price = false;
+				$price = false; 
 			}
 			
 			// Display prices
@@ -256,11 +272,12 @@ class ControllerModuleCart extends Controller {
 				'quantity' => $product['quantity'],
 				'price'    => $price,	
 				'total'    => $total,	
+//'mypri'  => $product['price'],
 				'href'     => $this->url->link('product/product', 'product_id=' . $product['product_id'])		
 			);
 		}
 		
-		//print_r('<pre>');
+	//print_r('<pre>');
 		//print_r($this->data['products']); die; 
 		// Gift Voucher
 		$this->data['vouchers'] = array();
@@ -289,7 +306,6 @@ class ControllerModuleCart extends Controller {
 				
 		$this->response->setOutput($this->render());		
 	}
-	
 	
 	public function respcartcontent()
 	{
@@ -343,7 +359,9 @@ class ControllerModuleCart extends Controller {
 				array_multisort($sort_order, SORT_ASC, $total_data);			
 			}		
 		}
+
 		
+
 		$this->data['totals'] = $total_data;
 		
 		$this->data['heading_title'] = $this->language->get('heading_title');
@@ -571,7 +589,6 @@ class ControllerModuleCart extends Controller {
 		
 			$this->data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL'); 
 		
-		
 	
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/respmodulecart.tpl')) {
 			$this->template = $this->config->get('config_template') . '/template/module/respmodulecart.tpl';
@@ -581,5 +598,6 @@ class ControllerModuleCart extends Controller {
 				
 		$this->response->setOutput($this->render());	
 	}
+		
 }
 ?>

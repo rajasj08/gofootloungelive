@@ -231,10 +231,8 @@
 								<option value="">--Select--</option>
 
 								<?php foreach ($option['option_value'] as $option_value) {
-								$ps="";
-if($option_value['price']){
-$ps = split("<span class='WebRupee'>Rs</span>", $option_value['price']); }  
-if($option_value['quantity'] >0 ){ 
+$ps = split("<span class='WebRupee'>Rs</span>", $option_value['price']);
+if($option_value['quantity'] >0 ){
 
  ?>
  										<option optionid="option[<?php echo $option['product_option_id']; ?>]" optionvalueid="<?php echo $option_value['product_option_value_id']; ?>" optionvaluename="<?php echo $option_value['name']; ?>" value="<?php echo $option_value['product_option_value_id']; ?>">

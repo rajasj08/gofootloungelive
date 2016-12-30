@@ -188,7 +188,7 @@ jQuery(function($) {
         'position': 'relative',
         'top': 'auto',
         'border':'0px solid #ccc'
-      });
+      }); 
   	}
   }
   $(window).scroll(fixDiv);

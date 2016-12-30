@@ -37,7 +37,12 @@
 
               <td class="center">
                 <a  class="<?php echo strtolower($order); ?>">Mail Id</a>
+              </td>
+
+              <td class="center">
+                <a >Products</a>
                </td>
+    
               <td class="center">
                 <a class="<?php echo strtolower($order); ?>">Order Date</a>
                 </td>
@@ -56,7 +61,7 @@
 
               <td align="center"><input type="text" name="filter_cust_mailid" value="<?php echo $filter_cust_mailid; ?>" /></td>
              
-             
+             <td></td>
               <td align="center"><input type="text" name="filter_order_date" value="<?php echo $filter_order_date; ?>" size="12" class="date" /></td>
              
               <td align="center"><a onclick="filter();" class="button"><?php echo $button_filter; ?></a></td>
@@ -69,6 +74,7 @@
               <td class="left"><?php echo $abuser['ab_cust_id']; ?></td>
               
               <td class="center"><?php echo $abuser['cust_mailid']; ?></td>
+              <td class="left"><?php echo $abuser['products']; ?></td>    
               <td class="center"><?php if($abuser['order_date']) { echo date("d/m/Y", strtotime($abuser['order_date'])); } ?></td>
               <td class="center">
                <a class="button" onclick="sendupdateorder(<?php echo $abuser['ab_cust_id']; ?>,'<?php echo $abuser['cust_mailid']; ?>');">View / Send</a> 
@@ -295,7 +301,7 @@ flag=0;} else {$("#couponcodes").css('border','1px solid #ccc');}
             //sending mail
             $.ajax({
             type: "POST",
-            url: 'https://gofootlounge.in/orderemail.php', 
+            url: 'http://testourworks.com/footlounge/orderemail.php', 
             data: { 
               orderid:orderid,
               timestamp:timestamp,

@@ -1,23 +1,17 @@
 <?php
-//test
+
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
 // HTTP
-//define('HTTP_SERVER', 'http://localhost/GitHub/gofootlounge/');
 define('HTTP_SERVER', 'https://gofootlounge.in/');
-
-//$documentRoot = $_SERVER['DOCUMENT_ROOT'].'GitHub/gofootlounge/';
-$documentRoot = "/var/app/current/";
-
+$documentRoot = $_SERVER['DOCUMENT_ROOT'].'/';
 define('DOCUMENT_ROOT', $documentRoot); 
 
 // HTTPS
-//define('HTTPS_SERVER', 'http://localhost/GitHub/gofootlounge/');
 define('HTTPS_SERVER', 'https://gofootlounge.in/');
 
-
-
+$documentRoot = $_SERVER['DOCUMENT_ROOT'].'/';
 
 // DIR
 define('DIR_APPLICATION', $documentRoot. 'catalog/');
@@ -30,7 +24,6 @@ define('DIR_IMAGE', $documentRoot. 'image/');
 define('DIR_CACHE', $documentRoot. 'system/cache/');
 define('DIR_DOWNLOAD', $documentRoot. 'download/');
 define('DIR_LOGS', $documentRoot. 'system/logs/');
-
 // DB
 
 define('DB_DRIVER', 'mysql');
@@ -40,12 +33,4 @@ define('DB_PASSWORD', 'Welcome!23');
 define('DB_DATABASE', 'ebdb');
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'oc_');
- 
-
-/*define('DB_DRIVER', 'mysql');
-define('DB_HOSTNAME', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_DATABASE', 'gofootlounge');
-define('DB_PREFIX', 'oc_');*/
 ?>

@@ -902,7 +902,7 @@ $class = $helper->calculateSpans( $ospans, $cols );
 			</form>
       </div>
       <div class="modal-footer"  style=" padding:10px 20px 10px !important; margin-top:0px;">
-     <span id="loadingspan"  style="display:none;"><img src="https://gofootlounge.in/catalog/view/theme/lexus_nextstore/image/fb-loading.gif" alt="Loading"> </span>  
+     <span id="loadingspan"  style="display:none;"><img src="hhttps://gofootlounge.in/catalog/view/theme/lexus_nextstore/image/fb-loading.gif" alt="Loading"> </span>  
       <span id="successcls1" style="display:inline;"></span>
 
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -336,7 +336,8 @@ class ControllerPavdealsDeals extends Controller {
 								'name'                    => $option_value['name'],
 								'image'                   => $this->model_tool_image->resize($option_value['image'], 50, 50),
 								'price'                   => $priceval,
-								'price_prefix'            => $option_value['price_prefix']
+								'price_prefix'            => $option_value['price_prefix'],
+                                                                'quantity'                 =>$option_value['quantity'],
 							);
 						}
 					}
@@ -381,6 +382,7 @@ class ControllerPavdealsDeals extends Controller {
 			'thumb'   	 => $image,
 			'name'		 => $deal['name'],
 			'quantity'	 => $deal['quantity'],
+                        'size'           => $this->data['options'], 
 			'price'   	 => $price,
 			'special' 	 => $special,
 			'is_newarrival' => $productNewArrival,

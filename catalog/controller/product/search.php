@@ -269,13 +269,15 @@ class ControllerProductSearch extends Controller {
 				//
 				
 				if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-					$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
+					/*$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));*/
+                                        $price = $this->currency->format($this->tax->calculate($result['price'], 0, $this->config->get('config_tax')));
 				} else {
 					$price = false;
 				}
 				
 				if ((float)$result['special']) {
-					$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')));
+					/*$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')));*/
+                                        $special = $this->currency->format($this->tax->calculate($result['special'], 0, $this->config->get('config_tax')));
 				} else {
 					$special = false;
 				}	
@@ -560,173 +562,6 @@ class ControllerProductSearch extends Controller {
 		}
 		echo json_encode( $data ); 
 	}
-	
-	 public function autocomplete() {
-
-
-
-                        $json = array();
-
-                    
-                        if (isset($this->request->get['filter_name'])) {
-                            
-                            $this->load->model('catalog/product');
-                            
-
-                            $filter_name = $this->request->get['filter_name']; // posted by the ajax request
-                            
-                            $filter_description = 'false'; // used a string instead of a pure boolean to avoid 
-                                                           // converting this var into boolean in all the other scripts 
-                                                           // that make use of it
-                            $adsmart_search_relevance = $this->config->get('adsmart_search_relevance');
-                            if (isset($adsmart_search_relevance['description'])){
-                                $filter_description = 'true';
-                            }
-                            
-                            
-                            
-                            // Get the sort order:
-                            
-                            $sort_order = explode('-', $this->config->get('adsmart_search_sort_order'));
-                            $sort       = isset($sort_order[0]) ? $sort_order[0] : '';
-                            $order      = isset($sort_order[1]) ? $sort_order[1] : '';
-    
-                            $start  = 0;
-                            
-                            
-                            // The maximum number of displayed results can be dynamically modified from the admin control panel,
-                            // in that case the parameter 'admin_dropdown_limit' is posted to this function, otherwise the limit
-                            // is read from the database.
-                            
-                            if (isset ($this->request->get['admin_dropdown_limit'])) {
-                                $limit = $this->request->get['admin_dropdown_limit'];
-                            }
-                            else {
-                                $limit = $this->config->get('adsmart_search_dropdown_max_num_results');
-                            }
-                            
-                    
-                            $filter_data = array(
-                            
-                                'live_search'           => true, // this flag tells if the request comes from the Live Search
-                            
-                                'filter_name'           => $filter_name,
-                                'filter_tag'            => '',
-                                'filter_description'    => $filter_description,
-                                'filter_category_id'    => 0,
-                                'filter_sub_category'   => '',
-                            //  'filter_manufacturer_id'=> '',
-                                'sort'                  => $sort,
-                                'order'                 => $order,
-                                'start'                 => $start,
-                                'limit'                 => $limit
-                            );
-                            
-                            $products = $this->model_catalog_product->adsmart_search_getProducts($filter_data);
-                            
-                            $this->load->model('tool/image');
-
-                
-                $filters= array(
-                
-                    'filter_name'           =>  'search',
-                    'filter_tag'            =>  'tag',
-                    'filter_description'    =>  'description',
-                    'filter_category_id'    =>  'category_id',
-                    'filter_sub_category'   =>  'sub_category'
-                );
-
-                foreach ($filters as $old => $new){
-
-                    if (isset($this->request->get[$old])) {
-                        $this->request->get[$new] = $this->request->get[$old];
-                    } 
-                    if (isset($this->request->get[$new])) {
-                        $this->request->get[$old] = $this->request->get[$new];
-                    } 
-                }
-
-                
-                            
-                            if ($this->config->get('adsmart_search_dropdown_img_size') !=''){
-                                $img_width = 50;
-                            }
-                            else {
-                                $img_width = 50;
-                            }
-                            
-
-                        
-                            foreach ($products as $product) {
-
-                                if ($product) {
-                                    if ($product['image']) {
-                                        
-
-                                    //Enable this code if you want a perfect resizing, without white spaces:
-                                    /*          
-                                        $img_info = getimagesize(DIR_IMAGE.$product['image']); // returns an array of values, $img_info[0] is the width, $img_info[1] is the height
-                                        $h_w_ratio = $img_info[1] / $img_info[0];
-                                        $img_height = round($img_width * $h_w_ratio);
-                                        $image = $this->model_tool_image->resize($product['image'], $img_width, $img_height);
-                                    */
-                                    
-                                    //  Comment this line if the above code is not commented:
-                                        $image = $this->model_tool_image->resize($product['image'], $img_width, $img_width);
-                                        
-                                    } else {
-                                    
-                                        $image = $this->model_tool_image->resize('img_not_found.gif', $img_width, $img_width);
-                                    }
-
-                                    
-                                    // $this->config->get('config_customer_price') is the flag under System -> Settings -> Tab Options -> Account
-                                    // (Only show prices when a customer is logged in)
-                                    
-                                    if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-                                        $price = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')));
-                                    } else {
-                                        $price = '';
-                                    }
-                                    
-                                    if ( (float)$product['special'] && (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) ) {
-                                        $special = $this->currency->format($this->tax->calculate($product['special'], $product['tax_class_id'], $this->config->get('config_tax')));
-                                    } else {
-                                        $special = '';
-                                    }
-                                    
-                                    if ($this->config->get('config_review_status')) {
-                                        $rating = $product['rating'];
-                                    } else {
-                                        $rating = false;
-                                    }
-                                    
-                                    $json[] = array(
-                                        'product_id' => $product['product_id'],
-                                        'image'      => $image,
-                                        'name'       => strip_tags(html_entity_decode($product['name'], ENT_QUOTES, 'UTF-8')),  
-                                        'model'      => $product['model'],
-                                        'price'      => $price,
-                                        'special'    => $special,
-                                        'option'     => '',
-                                        'rating'     => $rating,
-                                        'reviews'    => sprintf($this->language->get('text_reviews'), (int)$product['reviews']),
-                                        'href'       => $this->url->link('product/product', 'product_id=' . $product['product_id']) 
-                                    );
-                                }
-                            }
-                        }
-        
-        
-                        // Add debug info
-                        if (ADSMART_SRC_DEBUG || ADSMART_SRC_DEBUG_SHOW_SQL || ADSMART_SRC_SPEED_TEST ) {
-                            global $adsmart_src_debug;
-                            $json[] = array(
-                                'debug' => $adsmart_src_debug
-                            );                      
-                        }                   
-                        $this->response->setOutput(json_encode($json));
-                    }
 	//]]>
 	// end search auto fill
 }

@@ -10,7 +10,7 @@
         $timestamp=$_POST['timestamp']; 
         $emailid=$_POST['emailid']; 
 
-      //  $link='192.168.1.105/projects/Elakkiya/footloungeupdate_042016/cart/'.$orderid;  
+      //  $link='https://gofootlounge.in/cart/'.$orderid;  
         $subject='View Your Order'; 
         $message="Dear Customer,<br/><br/>You've received a order details and here is the code to view your order<br/><br/><b>".$timestamp."</b><br/><br/> Thank you";    
 

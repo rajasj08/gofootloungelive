@@ -796,7 +796,7 @@ class ControllerProductProduct extends Controller {
 	public function notifymail()
 	{
 		//$this->vendor->load('vendor/autoload.php');
-		//require 'https://gofootlounge.in/vendor/autoload.php';
+		//require 'http://192.168.1.105/projects/Elakkiya/footloungeupdate/vendor/autoload.php';
 		//echo "sfdfd";
 		//$this->load->model('vendor/autoload.php');	
 		//

@@ -278,7 +278,10 @@ class ControllerthemecontrolProduct extends Controller {
 			$this->data['reward'] = $product_info['reward'];
 			$this->data['points'] = $product_info['points'];
 				if ((float)$product_info['special']) {
-				$this->data['special'] = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')));
+				/* $this->data['special'] = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax'))); */
+
+                                $this->data['special'] = $this->currency->format($this->tax->calculate($product_info['special'], 0, $this->config->get('config_tax')));
+
 				$this->data['income'] = $this->currency->format($product_info['price'] - $product_info['special']);
 				$this->data['saving'] = round((($product_info['price'] - $product_info['special'])/$product_info['price'])*100, 0);
 			}
@@ -330,13 +333,15 @@ class ControllerthemecontrolProduct extends Controller {
 			}	
 						
 			if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-				$this->data['price'] = $this->currency->format($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')));
+				/*$this->data['price'] = $this->currency->format($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax'))); */
+                                 $this->data['price'] = $this->currency->format($this->tax->calculate($product_info['price'], 0, $this->config->get('config_tax')));
 			} else {
 				$this->data['price'] = false;
 			}
 						
 			if ((float)$product_info['special']) {
-				$this->data['special'] = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')));
+				/*$this->data['special'] = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')));*/
+                                $this->data['special'] = $this->currency->format($this->tax->calculate($product_info['special'], 0, $this->config->get('config_tax')));
 			} else {
 				$this->data['special'] = false;
 			}
@@ -354,7 +359,8 @@ class ControllerthemecontrolProduct extends Controller {
 			foreach ($discounts as $discount) {
 				$this->data['discounts'][] = array(
 					'quantity' => $discount['quantity'],
-					'price'    => $this->currency->format($this->tax->calculate($discount['price'], $product_info['tax_class_id'], $this->config->get('config_tax')))
+					/*'price'    => $this->currency->format($this->tax->calculate($discount['price'], $product_info['tax_class_id'], $this->config->get('config_tax'))) */
+                                       'price'    => $this->currency->format($this->tax->calculate($discount['price'], 0, $this->config->get('config_tax')))
 				);
 			}
 			
@@ -367,7 +373,8 @@ class ControllerthemecontrolProduct extends Controller {
 					foreach ($option['option_value'] as $option_value) {
 						if (!$option_value['subtract'] || ($option_value['quantity'] > 0)) {
 							if ((($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) && (float)$option_value['price']) {
-								$price = $this->currency->format($this->tax->calculate($option_value['price'], $product_info['tax_class_id'], $this->config->get('config_tax')));
+								/*$price = $this->currency->format($this->tax->calculate($option_value['price'], $product_info['tax_class_id'], $this->config->get('config_tax')));*/
+                                                                  $price = $this->currency->format($this->tax->calculate($option_value['price'], 0, $this->config->get('config_tax')));
 							} else {
 								$price = false;
 							}
@@ -427,13 +434,17 @@ class ControllerthemecontrolProduct extends Controller {
 				}
 				
 				if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-					$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
+					/*$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));*/
+
+                                          $price = $this->currency->format($this->tax->calculate($result['price'], 0, $this->config->get('config_tax'))); 
+                                        
 				} else {
 					$price = false;
 				}
 						
 				if ((float)$result['special']) {
-					$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')));
+					/*$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax'))); */ 
+                                          $special = $this->currency->format($this->tax->calculate($result['special'], 0, $this->config->get('config_tax'))); 
 				} else {
 					$special = false;
 				}
@@ -709,14 +720,19 @@ class ControllerthemecontrolProduct extends Controller {
                 );
                 
                 if ($profile_info['trial_status'] == 1) {
-                    $price = $this->currency->format($this->tax->calculate($profile_info['trial_price'] * $quantity, $product_info['tax_class_id'], $this->config->get('config_tax')));
+                   /* $price = $this->currency->format($this->tax->calculate($profile_info['trial_price'] * $quantity, $product_info['tax_class_id'], $this->config->get('config_tax')));*/
+
+                      $price = $this->currency->format($this->tax->calculate($profile_info['trial_price'] * $quantity, 0, $this->config->get('config_tax')));
+ 
                     $trial_text = sprintf($this->language->get('text_trial_description'), $price, $profile_info['trial_cycle'], $frequencies[$profile_info['trial_frequency']], $profile_info['trial_duration']) . ' ';
                 } else {
                     $trial_text = '';
                 }
                 
-                $price = $this->currency->format($this->tax->calculate($profile_info['price'] * $quantity, $product_info['tax_class_id'], $this->config->get('config_tax')));
-                
+                /*$price = $this->currency->format($this->tax->calculate($profile_info['price'] * $quantity, $product_info['tax_class_id'], $this->config->get('config_tax')));*/
+
+                 $price = $this->currency->format($this->tax->calculate($profile_info['price'] * $quantity, 0, $this->config->get('config_tax')));
+
                 if ($profile_info['duration']) {
                     $text = $trial_text . sprintf($this->language->get('text_payment_description'), $price, $profile_info['cycle'], $frequencies[$profile_info['frequency']], $profile_info['duration']);
                 } else {

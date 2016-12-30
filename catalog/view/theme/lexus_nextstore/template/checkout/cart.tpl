@@ -13,55 +13,61 @@
 
 <section class="col-lg-<?php echo $SPAN[1];?> col-md-<?php echo $SPAN[1];?> col-sm-12 col-xs-12">
 	<?php if ($attention) { ?>
-	<div class="attention"><?php echo $attention; ?><img src="catalog/view/theme/<?php echo $this->config->get('config_template');?>/image/close.png" alt="close" class="close" /></div>
+	<div class="attention"><?php echo $attention; ?><img src="catalog/view/theme/<?php echo $this->config->get('config_template');?>/image/close.png" alt="Close" class="close" /></div>
 	<?php } ?>
- 
+
 	<?php if ($success) { ?>
-	<div class="success"><?php echo $success; ?><img src="catalog/view/theme/<?php echo $this->config->get('config_template');?>/image/close.png" alt="close" class="close" /></div>
+	<div class="success"><?php echo $success; ?><img src="catalog/view/theme/<?php echo $this->config->get('config_template');?>/image/close.png" alt="Close" class="close" /></div>
 	<?php } ?>
 
 	<?php if ($error_warning) { ?>
-	<div class="warning"><?php echo $error_warning; ?><img src="catalog/view/theme/<?php echo $this->config->get('config_template');?>/image/close.png" alt="close" class="close" /></div>
+	<div class="warning"><?php echo $error_warning; ?><img src="catalog/view/theme/<?php echo $this->config->get('config_template');?>/image/close.png" alt="Close" class="close" /></div>
 	<?php } ?>
    
  
 	<div id="content">
 		<?php //echo $content_top; ?>
+		
+		
+			<div class="carttitcls">
 		<h1>
 			<?php echo $heading_title; ?>
 			<?php if ($weight) { ?>
 				&nbsp;(<?php echo $weight; ?>)
 			<?php } ?>
 		</h1>
-		
-		<div class="checkout wrapper no-margin">		
-			<form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" role="form">
-				<div class="cart-info table-responsive">
+		</div>
+		<div class="checkout wrapper no-margin splcheckoutcls">		
+			<form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" role="form" class="mycartform">
+				<div class="cart-info table-responsive cartinfobordercls">
 					<table class="table">
-						<thead>
+					<!--	<thead>
 							<tr>
 								<td class="image"><?php echo $column_image; ?></td>
 								<td class="name"><?php echo $column_name; ?></td>
 								<td class="model"><?php echo $column_model; ?></td>
 								<td class="quantity"><?php echo $column_quantity; ?></td>
 								<td class="price"><?php echo $column_price; ?></td>
+                                                                <td class="price"><?php echo $column_disc; ?></td>
 								<td class="total"><?php echo $column_total; ?></td>
 							</tr>
-						</thead>
+						</thead>-->
 						<tbody>
-							<?php 
-							 foreach ($products as $product) { ?> 
-							<tr>
+							<?php $bagtot=0; 
+							 foreach ($products as $product) { $scda = preg_replace('/\D/', '', $product['orgprice']); $bagtot+=$scda; ?> 
+							<tr> 
 								<td class="image" data-label="<?php echo $column_image; ?>">
 									<?php if ($product['thumb']) { ?>
 										<a href="<?php echo $product['href']; ?>">
 											<img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" />
 										</a>
 									<?php } ?>
+
+                                                                  	
 								</td>
 								<td class="name" data-label="<?php echo $column_name; ?>">
 									<a href="<?php echo $product['href']; ?>">
-										<?php echo $product['name']; ?>
+										<?php echo $product['name']; ?> - <?php echo $product['model']; ?>
 									</a>
 									<?php if (!$product['stock']) { ?>
 										<span class="stock">***</span>
@@ -74,17 +80,26 @@
 									<?php if ($product['reward']) { ?>
 										<small><?php echo $product['reward']; ?></small>
 									<?php } ?>
+                                                                         <div><input type="text" name="quantity[<?php echo $product['key']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" />
+									&nbsp;
+									<input type="image" src="catalog/view/theme/<?php echo $this->config->get('config_template');?>/image/update.png" alt="<?php echo $button_update; ?>" title="<?php echo $button_update; ?>" class="movecarticons" />
+									&nbsp;<a href="<?php echo $product['remove']; ?>"><img src="catalog/view/theme/<?php echo $this->config->get('config_template');?>/image/remove.png" alt="<?php echo $button_remove; ?>" title="<?php echo $button_remove; ?>" /></a> </div>   
 								</td>
 									
-								<td class="model" data-label="<?php echo $column_model; ?>"><?php echo $product['model']; ?></td>
-								<td class="quantity" data-label="<?php echo $column_quantity; ?>" >
+								<!--<td class="model" data-label="<?php echo $column_model; ?>"><?php echo $product['model']; ?></td>-->
+								<!--<td class="quantity" data-label="<?php echo $column_quantity; ?>" >
 									<input type="text" name="quantity[<?php echo $product['key']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" />
 									&nbsp;
 									<input type="image" src="catalog/view/theme/<?php echo $this->config->get('config_template');?>/image/update.png" alt="<?php echo $button_update; ?>" title="<?php echo $button_update; ?>" />
 									&nbsp;<a href="<?php echo $product['remove']; ?>"><img src="catalog/view/theme/<?php echo $this->config->get('config_template');?>/image/remove.png" alt="<?php echo $button_remove; ?>" title="<?php echo $button_remove; ?>" /></a>
-								</td>
-								<td class="price" data-label="<?php echo $column_price; ?>"  ><?php echo $product['price']; ?></td>
-								<td class="total" data-label="<?php echo $column_total; ?>"  ><?php echo $product['total']; ?></td>
+								</td> -->
+								<!--<td class="price" data-label="<?php echo $column_price; ?>"  ><?php echo $product['price']; ?></td>-->
+                                                                <td class="price pricewidthcls" data-label="<?php echo $column_price; ?>"  ><span class="linethroughcls"><?php echo $product['orgprice']; ?></span><br/>
+<span class="changepricefclr"><span>(<?php echo $product['discount']; ?>%OFF)</span> | <?php echo $product['total']; ?></span>
+
+</td> 
+                                                               <!-- <td align="right"><?php echo $product['discount']; ?>%</td>  
+								<td class="total" data-label="<?php echo $column_total; ?>"  ><?php echo $product['total']; ?></td> -->
 							</tr>
 							<?php } ?>
 						
@@ -104,15 +119,16 @@
 						</tbody>
 					</table>
 				</div>
+<!--<div class="left"><a href="<?php echo $continue; ?>" class="button btn btn-theme-default btnconmovecls"><?php echo $button_shopping; ?></a></div> -->
 			</form>
 			
-			<!--<div class="cart_coupon_voucher_reward_msg"> <h5 class="text-right">All coupon codes/gift vouchers can be applied at checkout.</h5></div>-->
+			<!--<div class="cart_coupon_voucher_reward_msg"> <h5 class="text-right">All coupon codes/gift vouchers can be applied at checkout.</h5></div> -->
 		  
-		<div class="wrapper-cart-total">
+		<div class="wrapper-cart-total mycartformdiv">
 		
-			<!----------Apply coupons start-------->
+		<!----------Apply coupons start-------->
 
-			<div class="cart-total clearfix notopborder" id="couponapplybtnresp1">
+			<div class="cart-total clearfix notopborder mycarttopcls" id="couponapplybtnresp1">
 			<?php if(isset($this->session->data['coupon'])){ ?>
 			<input type="button" value="Remove Coupon" class="button btn btn-theme-default cartcoupon" id="removecartcoupon" onclick="removecartcoupon();" style=" background:#444c63" />
 
@@ -122,16 +138,52 @@
 			</div>
 
 		<!----------Apply coupons end-------->
-		
-			<div class="cart-total clearfix">
-				<table id="total">
-					<?php foreach ($totals as $total) { ?>
-					<tr>
-						<td class="right"><b><?php echo $total['title']; ?>:</b></td>
-						<td class="right"><?php echo $total['text']; ?></td>
+			<div class="cart-total clearfix mycartsd">
+				<div id="coupontotal">
+				<table id="total" class="cartclswhole">
+                                        <tr class="ordertrsumy">
+                                              <td class="ordersumy">Order Summary:</td>
+                                              <td></td> 
+                                        </tr>
+                                        <tr>
+						<td class="right txtleftalign"><b> Sub-Total :<?php //echo $total['title']; ?></b></td>
+						<td class="right"><?php echo $bagtotdisp; ?></td>
 					</tr>
-					<?php } ?>
+				
+					<?php  $couponvalue=0; foreach ($totals as $total) { 
+
+						if($total['code']=='coupon')
+						{
+							$couponvalue=$total['value'];
+						}
+						if($total['code']=='total')
+						{
+							$total['value']=$total['value']+round($couponvalue); 
+							$total['text']=$this->currency->format($total['value']); 
+                                                        $total['title']='Order Total';
+						}
+
+                                                if($total['code']=='shipping')
+                                                { $total['title']='Delivery';}
+
+                                                if($total['code']=='sub_total')
+						{
+                                                      $discount_tot=$bagtot - round($total['value']); ?>
+                                                      <tr>
+						      <td class="right txtleftalign"><b>Discount<?php //echo $total['title']; ?>:</b></td>
+						      <td class="right cartfontcolorcls">- <?php echo $this->currency->format($discount_tot); ?></td>
+					              </tr> 
+                                              <?php   } else { 
+                                                      
+						?>
+					<tr>
+						<td class="right <?php if($total['code']=='total'){ echo "mytotcolorcls"; }?> txtleftalign"><b><?php echo $total['title']; ?>:</b></td>
+						<td class="right <?php if($total['code']=='total'){ echo "mytotcolorcls"; } if($total['code']=='shipping'){ echo "mytotshipcolorcls"; }?>"><?php echo $total['text']; ?></td>
+					</tr>
+					<?php }
+                                         } ?>
 				</table>
+				</div>
 			</div>
 		</div>  		
 
@@ -139,12 +191,14 @@
 
 		</div>	
 		
-		<div class="buttons">
+		<div class="buttons buttonpadcls">
 			<div class="right"><a onclick="smartcheckoutpopup();" class="button btn btn-theme-default">CHECKOUT NOW<?php //echo $button_checkout; ?></a></div>
-			<div class="left"><a href="<?php echo $continue; ?>" class="button btn btn-theme-default"><?php echo $button_shopping; ?></a></div>
+		
+<div class="left"><a href="<?php echo $continue; ?>" class="button btn btn-theme-default btnconmovecls"><?php echo $button_shopping; ?></a></div>
 		</div>	
-
-	<div class="col-md-12 marginsecuredmain">
+		
+		
+		<div class="col-md-12 marginsecuredmain">
 			
 				<div class="col-md-6 marginsecured">
 				<div class="row topclasspay">
@@ -165,7 +219,6 @@
 			</div>
 
 	</div>  
-
 
   
 <script type="text/javascript">
@@ -200,7 +253,7 @@ $('#button-quote').live('click', function() {
 						
 			if (json['error']) {
 				if (json['error']['warning']) {
-					$('#notification').html('<div class="warning new_cart">' + json['error']['warning'] + '<img src="catalog/view/theme/<?php echo $this->config->get('config_template');?>/image/close.png" alt="close" class="close" /></div>');
+					$('#notification').html('<div class="warning" style="display: none;">' + json['error']['warning'] + '<img src="catalog/view/theme/<?php echo $this->config->get('config_template');?>/image/close.png" alt="close" class="close" /></div>');
 					
 					$('.warning').fadeIn('slow');
 					
@@ -241,14 +294,14 @@ $('#button-quote').live('click', function() {
 							}
 								
 							html += '  <td><label for="' + json['shipping_method'][i]['quote'][j]['code'] + '">' + json['shipping_method'][i]['quote'][j]['title'] + '</label></td>';
-							html += '  <td class="new_cart_td"><label for="' + json['shipping_method'][i]['quote'][j]['code'] + '">' + json['shipping_method'][i]['quote'][j]['text'] + '</label></td>';
+							html += '  <td style="text-align: right;"><label for="' + json['shipping_method'][i]['quote'][j]['code'] + '">' + json['shipping_method'][i]['quote'][j]['text'] + '</label></td>';
 							html += '</tr>';
 						}		
 					} else {
 						html += '<tr>';
 						html += '  <td colspan="3"><div class="error">' + json['shipping_method'][i]['error'] + '</div></td>';
 						html += '</tr>';						
-					} 
+					}
 				}
 				
 				html += '  </table>';
@@ -290,7 +343,7 @@ $('select[name=\'country_id\']').bind('change', function() {
 		url: 'index.php?route=checkout/cart/country&country_id=' + this.value,
 		dataType: 'json',
 		beforeSend: function() {
-			$('select[name=\'country_id\']').after('<span class="wait">&nbsp;<img src="catalog/view/theme/<?php echo $this->config->get('config_template');?>/image/loading.gif" alt="loading" /></span>');
+			$('select[name=\'country_id\']').after('<span class="wait">&nbsp;<img src="catalog/view/theme/<?php echo $this->config->get('config_template');?>/image/loading.gif" alt="loading" /></span>'); 
 		},
 		complete: function() {
 			$('.wait').remove();
@@ -366,7 +419,7 @@ ecomm_prodid: [<?php $idsval='';$count=count($products); $j=1;
   	 }   
   	if( $idsval) { echo $idsval;} else { echo '""'; } ?>,
   	 	<?php }?>
-ecomm_pagetype: "cart", 
+ecomm_pagetype: "cart",  
 <?php if(count($products)>1) { ?>
 ecomm_totalvalue: [<?php $count=count($products); $j=1;$priceval='';
   foreach ($products as $i => $product) { 
@@ -391,10 +444,7 @@ ecomm_totalvalue: [<?php $count=count($products); $j=1;$priceval='';
   	  ?>, 
   	 	<?php } ?>
 };
-
-
 </script> 
-
 <div class="modal fade" tabindex="-1" role="dialog" id="cartcouponModal">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -403,13 +453,22 @@ ecomm_totalvalue: [<?php $count=count($products); $j=1;$priceval='';
         <h4 class="modal-title">APPLY COUPON</h4>
       </div>
       <div class="modal-body">
-      <!--<div style="margin-bottom: 20px;" ><p>This product has been solded out! Kindly fill the following details, our executive will contact you in another 48 hours. <a href="https://gofootlounge.in/new-arrivals"><span style="color: #CD6927 " id="modal_content">Happy Shopping</span><a></p></div>-->
+      <!--<div style="margin-bottom: 20px;" ><p>This product has been solded out! Kindly fill the following details, our executive will contact you in another 48 hours. <a href="http://www.footlounge.in/new-arrivals"><span style="color: #CD6927 " id="modal_content">Happy Shopping</span><a></p></div>-->
 		<!--<div style="margin-bottom: 20px;" ><p> Notify me when the product is back in Stock!</p></div> -->
 
        	<form class="form-horizontal">
        	<input type="hidden" id="npro_id" name="npro_id">
        	<input type="hidden" id="pro_name" name="pro_name">
        		<input type="hidden" id="pro_href" name="pro_href">
+
+        <div class="form-group">
+		   <!-- <label for="inputPassword3" class="col-sm-4 control-label">Coupon Code</label>-->
+		   <!-- <div class="col-sm-8">
+		      <input type="text" class="form-control cartcouponcode" id="cartcouponmailid" placeholder="Enter Your Mail Id">
+		    </div>
+		  
+		  </div> -->
+
        	<div class="form-group">
 		   <!-- <label for="inputPassword3" class="col-sm-4 control-label">Coupon Code</label>-->
 		    <div class="col-sm-8">
@@ -432,7 +491,7 @@ ecomm_totalvalue: [<?php $count=count($products); $j=1;$priceval='';
       <!---<div class="modal-footer" style=" padding: 8px 20px 8px !important;">
       <span class="alert alert-success" style=" padding:5px !important; margin-bottom:0px; display:none;"  id="success_msgaa">Request sent successfully</span>
       <span class="alert alert-danger" style=" padding:5px !important; margin-bottom:0px;display:none;" id="failure_msg">sending failed</span>
-      	<img src="https://gofootlounge.in/image/loading_spinner.gif" alt="loading..." id="image_spinner">
+      	<img src="http://192.168.1.105/projects/Elakkiya/footloungeupdate_042016/image/	loading_spinner.gif" alt="loading..." id="image_spinner">
         <button type="button" class="btn btn-default" id="closebtn" onclick="closemodal();">Close</button>
         <button type="button" class="btn btn-primary" id="sendbtn" onclick="sendnotify();">Send</button>
       </div> -->
@@ -447,7 +506,7 @@ ecomm_totalvalue: [<?php $count=count($products); $j=1;$priceval='';
         <h4 class="modal-title">Change Product Size</h4>
       </div>
       <div class="modal-body">
-      <!--<div style="margin-bottom: 20px;" ><p>This product has been solded out! Kindly fill the following details, our executive will contact you in another 48 hours. <a href="https://gofootlounge.in/new-arrivals"><span style="color: #CD6927 " id="modal_content">Happy Shopping</span><a></p></div>-->
+      <!--<div style="margin-bottom: 20px;" ><p>This product has been solded out! Kindly fill the following details, our executive will contact you in another 48 hours. <a href="http://www.footlounge.in/new-arrivals"><span style="color: #CD6927 " id="modal_content">Happy Shopping</span><a></p></div>-->
 		<div style="margin-bottom: 20px;" ><p></p></div>
 
        	<form class="form-horizontal">
@@ -498,7 +557,7 @@ ecomm_totalvalue: [<?php $count=count($products); $j=1;$priceval='';
       <div class="modal-footer" style=" padding: 8px 20px 8px !important;">
       <span class="alert alert-success" style=" padding:5px !important; margin-bottom:0px; display:none;"  id="success_msgaa">Request sent successfully</span>
       <span class="alert alert-danger" style=" padding:5px !important; margin-bottom:0px;display:none;" id="failure_msg">sending failed</span>
-      	<img src="https://gofootlounge.in/image/loading_spinner.gif" alt="loading..." id="image_spinner">
+      	<img src="http://footlounge.in/image/loading_spinner.gif" alt="loading..." id="image_spinner">
         <button type="button" class="btn btn-default" id="closebtn" onclick="closeproductSizeModal();">Close</button>
         <button type="button" class="btn btn-primary" id="sendbtn" onclick="updatecartprodsize();">Submit</button>
       </div>
@@ -506,6 +565,7 @@ ecomm_totalvalue: [<?php $count=count($products); $j=1;$priceval='';
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <script>
+
 	
 	function addcartcoupon() // add coupon for the cart
 	{
@@ -514,6 +574,20 @@ ecomm_totalvalue: [<?php $count=count($products); $j=1;$priceval='';
 
 	function applycouponcart()// apply coupon
 	{
+               /*  var flag=1;
+               var cartcouponmailid=$("#cartcouponmailid").val();
+
+                if(cartcouponmailid==''){$("#cartcouponmailid").css('border','1px solid #F00');flag=0;}
+                else{$("#cartcouponmailid").css('border','1px solid #ccc');} 
+                 var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/igm;
+
+               if(cartcouponmailid!='')
+               {
+               if (re.test(cartcouponmailid) == false)  { $("#cartcouponmailid").css('border','1px solid #F00');
+               flag=0; } else { $("#cartcouponmailid").css('border','1px solid #ccc');}
+               }
+ 
+                if(flag==1) { */  
 		var cartcouponcode=$('#cartcouponcode').val();
 		$.ajax({
 		url: 'index.php?route=checkout/coupon_options/cartvalidate', 
@@ -544,12 +618,18 @@ ecomm_totalvalue: [<?php $count=count($products); $j=1;$priceval='';
 		        url: 'index.php?route=checkout/cart/replacecarttotal', 
 		        data:{coupon:cartcouponcode} ,
 		        success: function(resp){
+                        
 		        	if(resp) {
+                                        
 		        		$("#coupontotal").html(resp);
 		        		$("#cartcouponModal").modal('hide');
 		        		$("#couponapplybtnresp1").html(' <input type="button" value="Remove Coupon" class="button btn btn-theme-default cartcoupon" id="removecartcoupon" style=" background:#444c63" onclick="removecartcoupon();"/>');  
 		        		$("#cartcouponcode").val('');
 		        		$("#checkout_coupon_msg").hide();
+                                        $quan=$("#prodcutquan").val();
+                                        $priceval=$('.overall_infototal').html();  
+                                        
+                                        $("#cart-total").html($quan+' Item(s)-'+$priceval);   
 		        	}
 		        }
 		    });
@@ -559,6 +639,11 @@ ecomm_totalvalue: [<?php $count=count($products); $j=1;$priceval='';
 			{
 				$("#checkout_coupon_msg").addClass('label-danger');
 			}
+                         /*var qv=$("#prodcutquan").val();
+                        //alert($("#prodcutquan").val()); 
+                        var ot=$('.overall_infototal').html(); 
+                        $("#cart-total").html(qv+' Item(s)-'+ot); */ 
+ 
 			$("#checkout_coupon_msg").show('slow');
 			setTimeout(function(){ $("#checkout_coupon_msg").hide('slow') }, 3000);
 			return false;
@@ -566,14 +651,14 @@ ecomm_totalvalue: [<?php $count=count($products); $j=1;$priceval='';
 		error: function(xhr, ajaxOptions, thrownError) {
 			
 		}
-	});	
+	}); //}	
 	}
 	function closecouponmodal()//close coupon model
 	{
 		$("#cartcouponModal").modal('hide'); 
 	}
 
-	function removecartcoupon()
+	function removecartcoupon() 
 	{
 		
 		var a=confirm('Woule you like romove coupon');
@@ -596,17 +681,23 @@ ecomm_totalvalue: [<?php $count=count($products); $j=1;$priceval='';
 			$('.wait').remove();
 		},	 
 		        success: function(resp){
+
 		        	if(resp) {
-		        	
-		        			$("#coupontotal").html(resp);
-						$("#couponapplybtnresp1").html('<input type="button" value="<?php echo $button_coupon; ?>" id="removecartcoupon" class="button btn btn-theme-default cartcoupon" onclick="addcartcoupon();"/>'); 
 
 		        	
+		        			$("#coupontotal").html(resp);
+
+						$("#couponapplybtnresp1").html('<input type="button" value="<?php echo $button_coupon; ?>" id="removecartcoupon" class="button btn btn-theme-default cartcoupon" onclick="addcartcoupon();"/>'); 
+
+		        	        $quan=$("#prodcutquan").val();
+                                        $priceval=$('.overall_infototal').html();  
+
+                                        $("#cart-total").html($quan+' Item(s)-'+$priceval);
 
 		        		
 		        	}
 		        }
-		    });
+		    }); 
 
 		}
 	}
@@ -617,8 +708,7 @@ ecomm_totalvalue: [<?php $count=count($products); $j=1;$priceval='';
 		    type: "POST",
 		    url: 'index.php?route=product/product/getproductoptioninfos/',   
 		    data: {
-		      product_id:product_id,
-                      type:2
+		      product_id:product_id
 		    },
 		    success: function(jsonresp){
 		    	
@@ -706,19 +796,12 @@ ecomm_totalvalue: [<?php $count=count($products); $j=1;$priceval='';
 									    
 							}
 								});
-								
-
+								   
 
  
 
 							
 	}
-</script>
-<script type="text/javascript">
-	
-	// AddToCart
-// Track when items are added to a shopping cart (ex. click/landing page on Add to Cart button)
-fbq('track', 'AddToCart');
 </script>
 
 <?php echo $footer; ?> 

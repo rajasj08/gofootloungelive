@@ -872,30 +872,30 @@ $query = $this->db->query("SELECT COUNT(DISTINCT email) AS total FROM `" . DB_PR
         public function getabuserOrders($data = array()) //get abandoned user orders
         {
             
-           $sql = "SELECT * FROM `" . DB_PREFIX . "abandoned_customer` where status !='1'";
+           $sql = "SELECT a.*,b.product_ids,b.quantity,b.product_json FROM `" . DB_PREFIX . "abandoned_customer` as a left join `" . DB_PREFIX . "abuser_products` as b on b.ab_userid=a.ab_cust_id where a.status !='1'";
 
 		if (isset($data['filter_ab_cust_id'])) {
-			$sql .= " AND ab_cust_id = '" . (int)$data['filter_ab_cust_id'] . "'";
+			$sql .= " AND a.ab_cust_id = '" . (int)$data['filter_ab_cust_id'] . "'";
 		} else {
-			$sql .= " AND ab_cust_id > '0'";
+			$sql .= " AND a.ab_cust_id > '0'";
 		}
 
 		if (!empty($data['filter_userid'])) {
-			$sql .= " AND userid = '" . (int)$data['filter_userid'] . "'";
+			$sql .= " AND a.userid = '" . (int)$data['filter_userid'] . "'";
 		}
 
 		if (!empty($data['filter_cust_mailid'])) {
-			$sql .= " AND cust_mailid = '" . $data['filter_cust_mailid'].trim() . "'";
+			$sql .= " AND a.cust_mailid = '" . $data['filter_cust_mailid'].trim() . "'";
 		}
 
                 if (!empty($data['filter_order_date'])) {
-			$sql .= " AND order_date = '" . $data['filter_order_date'] . "'";
+			$sql .= " AND a.order_date = '" . $data['filter_order_date'] . "'";
 		}
 
                 if (isset($data['sort']) && in_array($data['sort'], $sort_data)) {
 			$sql .= " ORDER BY " . $data['sort'];
 		} else {
-			$sql .= " ORDER BY ab_cust_id";
+			$sql .= " ORDER BY a.ab_cust_id";
 		}
 
 		if (isset($data['order']) && ($data['order'] == 'DESC')) {
@@ -916,8 +916,6 @@ $query = $this->db->query("SELECT COUNT(DISTINCT email) AS total FROM `" . DB_PR
 
 			$sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
 		}
-
-
             
 		$query = $this->db->query($sql);
 
@@ -1278,7 +1276,126 @@ public function getProduct($product_id) {
 
                  $query = $this->db->query($sql);
 		return $query->row['username']; 
-        }   
+        } 
+         
+
+         public function getallcusts($data = array()) //get abandoned user orders
+        {
+           
+            $sql = "SELECT a.* FROM `" . DB_PREFIX . "abandoned_customer` as a where status !=1 and a.userid =0";
+
+		if (isset($data['filter_usertype'])) {
+                        if($data['filter_usertype'] == 'Guest'){
+			$sql .= " AND a.userid=0";}
+                       else {$sql .= " AND a.userid <0";}
+		} 
+                if (!empty($data['filter_cust_mailid'])) {
+			$sql .= " AND a.cust_mailid = '" . $data['filter_cust_mailid'].trim() . "'";
+		}
+
+		/*if (!empty($data['filter_userid'])) {
+			$sql .= " AND a.userid = '" . (int)$data['filter_userid'] . "'";
+		}
+
+		if (!empty($data['filter_cust_mailid'])) {
+			$sql .= " AND a.cust_mailid = '" . $data['filter_cust_mailid'].trim() . "'";
+		}
+
+                if (!empty($data['filter_order_date'])) {
+			$sql .= " AND a.order_date = '" . $data['filter_order_date'] . "'";
+		}
+
+                if (isset($data['sort']) && in_array($data['sort'], $sort_data)) {
+			$sql .= " ORDER BY " . $data['sort'];
+		} else {
+			$sql .= " ORDER BY a.ab_cust_id";
+		}
+
+		if (isset($data['order']) && ($data['order'] == 'DESC')) {
+			$sql .= " DESC";
+		} else {
+			$sql .= " ASC";
+		} */
+
+
+		if (isset($data['start']) || isset($data['limit'])) {
+			if ($data['start'] < 0) {
+				$data['start'] = 0;
+			}
+
+			if ($data['limit'] < 1) {
+				$data['limit'] = 10;
+			}
+
+			$sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
+		}
+              
+		$query = $this->db->query($sql);
+
+
+		return $query->rows;
+        } 
+
+       public function getTotalallcusts($data = array()) {
+      	$sql = "SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "abandoned_customer` where status !='1'";
+
+
+		$query = $this->db->query($sql);
+
+		return $query->row['total'];
+	}
+        public function getalloscusts($data = array()){
+
+           $sql = "SELECT * FROM `" . DB_PREFIX . "outofstock_customers`";
+         
+            if (isset($data['filter_usertype'])) {
+                        if($data['filter_usertype'] != 'Out Of Stock'){
+			$sql .= " Where os_cust_id < 0";}
+                        else {$sql .= " Where os_cust_id> 0";}
+		}
+         if (isset($data['filter_usertype'])) {
+            if (!empty($data['filter_cust_mailid'])) {
+			$sql .= " AND os_mailid = '" . $data['filter_cust_mailid'].trim() . "'";
+		} 
+          }
+         else{
+               if (!empty($data['filter_cust_mailid'])) {
+			$sql .= " Where os_mailid = '" . $data['filter_cust_mailid'].trim() . "'";
+		} 
+             }
+              //echo $sql; die;
+           $query = $this->db->query($sql);
+
+
+		return $query->rows;
+
+        }
+ 
+
+          public function getallregcusts($data = array()){
+
+           $sql = "SELECT * FROM `" . DB_PREFIX . "customer` where status=1 and approved=1";
+         
+            if (isset($data['filter_usertype'])) {
+                        if($data['filter_usertype'] != 'Registered'){
+			$sql .= " AND customer_id< 0";}
+                        else {$sql .= " AND customer_id > 0";}
+		}
+         
+            if (!empty($data['filter_cust_mailid'])) {
+			$sql .= " AND email = '" . $data['filter_cust_mailid'].trim() . "'";
+		} 
+         
+         
+           
+           $query = $this->db->query($sql);
+
+
+		return $query->rows;
+
+        }
+
+    
 
 }
 ?>

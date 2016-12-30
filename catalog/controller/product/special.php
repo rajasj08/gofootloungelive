@@ -124,13 +124,15 @@ class ControllerProductSpecial extends Controller {
 			}
 			
 			if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-				$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
+				/*$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));*/
+                                $price = $this->currency->format($this->tax->calculate($result['price'], 0, $this->config->get('config_tax')));  
 			} else {
-				$price = false;
+				$price = false; 
 			}
 			
 			if ((float)$result['special']) {
-				$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')));
+				/*$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')));*/
+                                $special = $this->currency->format($this->tax->calculate($result['special'],0, $this->config->get('config_tax')));   
 			} else {
 				$special = false;
 			}	

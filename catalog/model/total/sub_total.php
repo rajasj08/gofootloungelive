@@ -19,7 +19,7 @@ class ModelTotalSubTotal extends Model {
 			'sort_order' => $this->config->get('sub_total_sort_order')
 		);
 		
-		$total += $sub_total;
+		$total += round($sub_total);
 	}
 }
 ?>

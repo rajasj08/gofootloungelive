@@ -83,7 +83,7 @@ if($emailid)
 if(mail('order@footlounge.in', $subject, $message, $headers)){
 
     echo 1;
-} else{ 
+} else{  
     echo 0; 
 }  
 

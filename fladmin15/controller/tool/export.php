@@ -158,6 +158,7 @@ else{
 
 	public function download() {
 		if ($this->validate()) {
+                         ini_set('memory_limit', '2048M'); //Extend memory limit 
 
 			// send the categories, products and options as a spreadsheet file
 			$this->load->model('tool/export');
@@ -348,6 +349,33 @@ else{
                          else
                          {$username ='guest'; }
 
+                          // This is for fetching product details
+
+                         if($result['ab_cust_id']){
+                         $username = $this->model_sale_order->getusernameinfo($result['ab_cust_id']); 
+                         }
+                         else
+                         {$username ='guest'; }
+                         $prodarray=array();$prodstr='';
+                         if($result['product_json']){
+
+            	         $productjson=json_decode($result['product_json']);
+             
+               
+	                   foreach($productjson as $keyn => $valuen)
+			         {
+			         	array_push($prodarray, $valuen->name) ;
+			         
+			         }
+
+
+                         }
+
+          if(count($prodarray) > 1) {
+			$prodstr=implode(" , ",$prodarray);}
+			else {if(isset($prodarray[0])) {$prodstr=$prodarray[0];} else {$prodstr='';}}
+ 
+
 			
 			$this->data['abusers'][] = array(
 				'ab_cust_id'      => $result['ab_cust_id'],
@@ -359,6 +387,7 @@ else{
 				'st3'    => $result['st3'],
 				'st4'    => $result['st4'],
                                 'status'    => $result['status'],
+                                  'products'  =>$prodstr,
                                 'order_date'    => $result['order_date'],
 			);
 		}
@@ -587,8 +616,8 @@ if($valuen->price){$shopprodprice=$valuen->price;}
 if($option_value){ $shopbag.='<p><span>- Size : '.$option_value.'</span></p>'; }
 $shopbag.='</td>
 <td style="text-align:left; width:15%">* '.$valuen->quantity.'</td>
-<td style="text-align:right; width:15%"><img src="http://www.footlounge.in/image/data/Social%20Icons/IndianRupee.png" style="height:8px; width:8px;"> '.round($shopprodprice).'</td>
-<td style="text-align:right; width:15%"><img src="http://www.footlounge.in/image/data/Social%20Icons/IndianRupee.png" style="height:8px;width:8px;"> '.round($shopprodprice).'</td>
+<td style="text-align:right; width:15%"><img src="https://gofootlounge.in/image/data/Social%20Icons/IndianRupee.png" style="height:8px; width:8px;"> '.round($shopprodprice).'</td>
+<td style="text-align:right; width:15%"><img src="https://gofootlounge.in/image/data/Social%20Icons/IndianRupee.png" style="height:8px;width:8px;"> '.round($shopprodprice).'</td>
 </tr>';
 
 
@@ -597,8 +626,8 @@ $shopbag.='</td>
          						}
          }  
 
-         $shopbag.='<tr style="background:#f0f0c3; "><td colspan="4" align="right">Sub-Total : </td><td style="float:right;"><img src="http://www.footlounge.in/image/data/Social%20Icons/IndianRupee.png" style="height:8px;width:8px;"> '.round($totalval).'</td></tr>
-<tr style="background:#f0f0c3; "><td colspan="4" align="right">Total : </td><td style="float:right;"><img src="http://www.footlounge.in/image/data/Social%20Icons/IndianRupee.png" style="height:8px;width:8px;"> '.round($totalval).'</td></tr></tbody></table>'; 
+         $shopbag.='<tr style="background:#f0f0c3; "><td colspan="4" align="right">Sub-Total : </td><td style="float:right;"><img src="https://gofootlounge.in/image/data/Social%20Icons/IndianRupee.png" style="height:8px;width:8px;"> '.round($totalval).'</td></tr>
+<tr style="background:#f0f0c3; "><td colspan="4" align="right">Total : </td><td style="float:right;"><img src="https://gofootlounge.in/image/data/Social%20Icons/IndianRupee.png" style="height:8px;width:8px;"> '.round($totalval).'</td></tr></tbody></table>'; 
 
 } 
 
@@ -667,7 +696,7 @@ foreach ($productcinfos as $result) {
 				'name'    	 => $result['name'],
 				'price'   	 => $price,
 				'special' 	 => $special,
-				'href'    	 => 'http://www.footlounge.in/index.php?route=product/product&amp;product_id='.$result['product_id'],
+				'href'    	 => 'https://gofootlounge.in/index.php?route=product/product&amp;product_id='.$result['product_id'],
 				'quantity' =>$result['quantity'],
 				
 			);
@@ -691,11 +720,11 @@ $pos = strrpos($info['thumb'], $search);
     }*/
 $subjectaa=$info['thumb'];
 $subjectaa = str_replace(' ', '%20', $subjectaa);
-$subjectaa ="http://www.footlounge.in/image/".$subjectaa;
+$subjectaa ="https://gofootlounge.in/image/".$subjectaa;
 if($info['special']) $pricevali=$info['special']; else $pricevali=$info['price'];
  
   $latestpros.= '<td class="col-md-3 testssls" style="width:25%;"><p class="latcls" style="font-size:14px; text-align:center;"><img src="'.$subjectaa.'" style="height:50px; width:50px;" title="'.$name.'" class="product-image-zoom img-responsive"></p><p>'.$info['name'].'</p>
-<p style="text-align:center;"><span><img src="http://www.footlounge.in/image/data/Social%20Icons/IndianRupee.png" style="height:8px;width:8px;"> '.round($pricevali).'</span></p>
+<p style="text-align:center;"><span><img src="https://gofootlounge.in/image/data/Social%20Icons/IndianRupee.png" style="height:8px;width:8px;"> '.round($pricevali).'</span></p>
 <p style="text-align:center;">
 <a style="color:#FFF !important; text-align:center; cursor:pointer;" href="'.$info['href'].'" class="shopnownbtn"><div style="cursor:pointer;"><button class="mybtnccls" style="height:35px; width:80%; color: #000;border: 2px solid #ccc !important; cursor:pointer;">Shop Now</button></div></a></p>
 </td>';
@@ -713,11 +742,11 @@ if($info['special']) $pricevali=$info['special']; else $pricevali=$info['price']
          
         //shopping bag product list
        if($abuserid){
-	$checkoutnowbtnval='http://www.footlounge.in/cart?abuserid='.$abuserid; } 
-else{$checkoutnowbtnval='http://www.footlounge.in/';}
+	$checkoutnowbtnval='https://gofootlounge.in/cart?abuserid='.$abuserid; } 
+else{$checkoutnowbtnval='https://gofootlounge.in/';}
 //echo 'http://'. $_SERVER['SERVER_NAME']."<br/>" . $_SERVER['REQUEST_URI']; 
 /*
-$url = "http://www.footlounge.in/discountmsg.html";
+$url = "https://gofootlounge.in/discountmsg.html";
 $ch = curl_init();
 curl_setopt ($ch, CURLOPT_URL, $url);
 curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, 5);
@@ -736,7 +765,7 @@ if (!is_string($contents) || !strlen($contents)) {
 $contents = '';
 }
 */
-        $message1= htmlentities(file_get_contents("http://www.footlounge.in/discountmsg.html"));   
+        $message1= htmlentities(file_get_contents("https://gofootlounge.in/discountmsg.html"));   
 
         //$message1= htmlentities(file_get_contents("discountmsg.html"));  
 
@@ -747,7 +776,7 @@ $discountdisn=$discountdisn.'%';
               $strn2=str_replace('ndispercent',$discountdisn,$message1);
 } else if($discounttypen=='F')
 {
-$discountdisn='<img src="http://www.footlounge.in/image/data/Social%20Icons/IndianRupee.png" style="height:10px;width:10px;">'.$discountdisn;
+$discountdisn='<img src="https://gofootlounge.in/image/data/Social%20Icons/IndianRupee.png" style="height:10px;width:10px;">'.$discountdisn;
               $strn2=str_replace('ndispercent',$discountdisn,$message1);  
 }
               $strn3=str_replace('ndiscode',$discountcoden,$strn2);
@@ -771,14 +800,365 @@ $discountdisn='<img src="http://www.footlounge.in/image/data/Social%20Icons/Indi
         	// Create email headers$emailid
 			
 	      // if( mail('Pooja_khatri@yahoo.com', 'Email Notification Request Received', $str1, $headers))
-	      if( mail('Pooja_khatri@yahoo.com', 'Alert! Your Cart item is on Discount', $str1, $headers))
+	      if( mail($mailid, 'Alert! Your Cart item is on Discount', $str1, $headers))
 	     { echo 1; } else echo 0;        
  
         }  
        
  
       } 
- 
+   public function getallcustomer() // get abandoned user list
+        {
+          $this->language->load('sale/order');
+          //$this->language->get('heading_title')='Abandoned Users';
+
+		$this->document->setTitle($this->language->get('Customers List'));
+
+		$this->load->model('sale/order');
+
+    	  $this->getallcustomerList();
+            
+        }
+         
+        protected function getallcustomerList() {
+
+		if (isset($this->request->get['filter_usertype'])) {
+			$filter_usertype = $this->request->get['filter_usertype'];
+		} else {
+			$filter_usertype = null;
+		}
+                if (isset($this->request->get['filter_cust_mailid'])) {
+			$filter_cust_mailid = $this->request->get['filter_cust_mailid'];
+		} else {
+			$filter_cust_mailid = null;
+		}
+
+		/*if (isset($this->request->get['filter_userid'])) {
+			$filter_userid= $this->request->get['filter_userid'];
+		} else {
+			$filter_userid = null;
+		}
+
+		
+		
+		if (isset($this->request->get['filter_order_date'])) {
+			$filter_order_date = $this->request->get['filter_order_date'];
+		} else {
+			$filter_order_date = null;
+		}
+
+
+		if (isset($this->request->get['sort'])) {
+			$sort = $this->request->get['sort'];
+		} else {
+			$sort = 'ab_cust_id';
+		}
+
+		if (isset($this->request->get['order'])) {
+			$order = $this->request->get['order'];
+		} else {
+			$order = 'DESC';
+		}*/
+		
+		if (isset($this->request->get['page'])) {
+			$page = $this->request->get['page'];
+		} else {
+			$page = 1;
+		} 
+				
+		$url = '';
+
+
+
+		if (isset($this->request->get['filter_usertype'])) {
+			$url .= '&filter_usertype=' . $this->request->get['filter_usertype'];
+		}
+
+		if (isset($this->request->get['filter_cust_mailid'])) {
+			$url .= '&filter_cust_mailid=' . $this->request->get['filter_cust_mailid'];
+		}
+
+		/*if (isset($this->request->get['filter_userid'])) {
+			$url .= '&filter_userid=' . $this->request->get['filter_userid'];
+		}
+											
+		
+		
+		if (isset($this->request->get['filter_order_date'])) {
+			$url .= '&filter_order_date=' . $this->request->get['filter_order_date'];
+		}
+		
+		if (isset($this->request->get['sort'])) {
+			$url .= '&sort=' . $this->request->get['sort'];
+		}
+
+		if (isset($this->request->get['order'])) {
+			$url .= '&order=' . $this->request->get['order'];
+		}*/
+		
+		if (isset($this->request->get['page'])) {
+			$url .= '&page=' . $this->request->get['page'];
+		}
+
+  		$this->data['breadcrumbs'] = array();
+
+   		$this->data['breadcrumbs'][] = array(
+       		'text'      => $this->language->get('text_home'),
+			'href'      => $this->url->link('common/home', 'token=' . $this->session->data['token'], 'SSL'),
+      		'separator' => false
+   		);
+
+   		$this->data['breadcrumbs'][] = array(
+       		'text'      => $this->language->get('heading_title'),
+			'href'      => $this->url->link('sale/order', 'token=' . $this->session->data['token'] . $url, 'SSL'),
+      		'separator' => ' :: '
+   		);
+
+		/* $this->data['invoice'] = $this->url->link('sale/order/invoice', 'token=' . $this->session->data['token'], 'SSL');
+		$this->data['insert'] = $this->url->link('sale/order/insert', 'token=' . $this->session->data['token'], 'SSL');
+		$this->data['delete'] = $this->url->link('sale/order/delete', 'token=' . $this->session->data['token'] . $url, 'SSL'); */ 
+
+		$this->data['orders'] = array();
+
+		$data = array(
+			'filter_usertype'        => $filter_usertype,
+                        'filter_cust_mailid' => $filter_cust_mailid,
+			/*'filter_userid'	     => $filter_userid,
+			
+			'filter_order_date'           => $filter_order_date,
+			'sort'                   => $sort,
+			'order'                  => $order,*/
+			'start'                  => ($page - 1) * $this->config->get('config_admin_limit'),
+			'limit'                  => $this->config->get('config_admin_limit')
+		);
+
+                
+		//if($data['filter_usertype']) {  } 
+
+		$newresults = $this->model_sale_order->getallcusts($data);
+                
+                //$couponcodes= $this->model_sale_order->getcouponcodeinfos(); //get coupon code for abandoned user 
+              
+    	foreach ($newresults as $result) {
+
+			/*$action = array();
+						
+			$action[] = array(
+				'text' => $this->language->get('text_view'),
+				'href' => $this->url->link('sale/order/info', 'token=' . $this->session->data['token'] . '&order_id=' . $result['order_id'] . $url, 'SSL')
+			);
+			
+			if (strtotime($result['date_added']) > strtotime('-' . (int)$this->config->get('config_order_edit') . ' day')) {
+				$action[] = array(
+					'text' => $this->language->get('text_edit'),
+					'href' => $this->url->link('sale/order/update', 'token=' . $this->session->data['token'] . '&order_id=' . $result['order_id'] . $url, 'SSL')
+				);
+			}*/
+
+                         if($result['userid']){
+                         $username = 'Registered'; 
+                         }
+                         else
+                         {$username ='Guest'; }
+
+			$this->data['abusers'][] = array(
+				/*'ab_cust_id'      => $result['ab_cust_id'],*/
+				'userid'      => $result['userid'],
+                                'usertype'    =>$username,
+				'cust_mailid'        => $result['cust_mailid'],
+				'mobileno' =>'',
+				);
+		}
+
+
+                //get all registered customer list
+
+                 $newresults2 = $this->model_sale_order->getallregcusts($data);
+                
+                //$couponcodes= $this->model_sale_order->getcouponcodeinfos(); //get coupon code for abandoned user 
+              
+    	        foreach ($newresults2 as $result2) {
+                    // if(in_array($result1['os_mailid'],$this->data['abusers']))
+
+                      $this->data['abusers'][] = array(
+				/*'ab_cust_id'      => $result2['ab_cust_id'],*/
+				'userid'      => $result2['customer_id'],
+                                'usertype'    =>'Registered',
+				'cust_mailid'        => $result2['email'],
+				'mobileno' =>$result2['telephone'],
+				);
+                 
+                }
+
+                
+                //get out of stockuser list
+                $newresults1 = $this->model_sale_order->getalloscusts($data);
+                
+                //$couponcodes= $this->model_sale_order->getcouponcodeinfos(); //get coupon code for abandoned user 
+              
+    	        foreach ($newresults1 as $result1) {
+                    // if(in_array($result1['os_mailid'],$this->data['abusers']))
+
+                      $this->data['abusers'][] = array(
+				/*'ab_cust_id'      => $result1['ab_cust_id'],*/
+				'userid'      => '',
+                                'usertype'    =>'Out Of Stock',
+				'cust_mailid'        => $result1['os_mailid'],
+				'mobileno' =>$result1['os_phoneno'],
+				);
+                 
+                }
+
+                $order_total = count( $this->data['abusers']);
+              // print_r('<pre>'); print_r($this->data['abusers']); die; 
+                
+		$this->data['heading_title'] = $this->language->get('heading_title');
+
+		$this->data['text_no_results'] = $this->language->get('text_no_results');
+		$this->data['text_missing'] = $this->language->get('text_missing');
+
+		$this->data['column_order_id'] = $this->language->get('column_order_id');
+    	$this->data['column_customer'] = $this->language->get('column_customer');
+		$this->data['column_status'] = $this->language->get('column_status');
+		$this->data['column_total'] = $this->language->get('column_total');
+		$this->data['column_date_added'] = $this->language->get('column_date_added');
+		$this->data['column_date_modified'] = $this->language->get('column_date_modified');
+		$this->data['column_action'] = $this->language->get('column_action');
+
+		$this->data['button_invoice'] = $this->language->get('button_invoice');
+		$this->data['button_insert'] = $this->language->get('button_insert');
+		$this->data['button_delete'] = $this->language->get('button_delete');
+		$this->data['button_filter'] = $this->language->get('button_filter');
+
+		$this->data['token'] = $this->session->data['token'];
+		
+		if (isset($this->error['warning'])) {
+			$this->data['error_warning'] = $this->error['warning'];
+		} else {
+			$this->data['error_warning'] = '';
+		}
+
+		if (isset($this->session->data['success'])) {
+			$this->data['success'] = $this->session->data['success'];
+
+			unset($this->session->data['success']);
+		} else {
+			$this->data['success'] = '';
+		}
+
+		$url = '';
+
+		if (isset($this->request->get['filter_order_id'])) {
+			$url .= '&filter_order_id=' . $this->request->get['filter_order_id'];
+		}
+		
+		if (isset($this->request->get['filter_customer'])) {
+			$url .= '&filter_customer=' . urlencode(html_entity_decode($this->request->get['filter_customer'], ENT_QUOTES, 'UTF-8'));
+		}
+											
+		if (isset($this->request->get['filter_order_status_id'])) {
+			$url .= '&filter_order_status_id=' . $this->request->get['filter_order_status_id'];
+		}
+		
+		if (isset($this->request->get['filter_total'])) {
+			$url .= '&filter_total=' . $this->request->get['filter_total'];
+		}
+					
+		if (isset($this->request->get['filter_date_added'])) {
+			$url .= '&filter_date_added=' . $this->request->get['filter_date_added'];
+		}
+		
+		if (isset($this->request->get['filter_date_modified'])) {
+			$url .= '&filter_date_modified=' . $this->request->get['filter_date_modified'];
+		}
+
+		if ($order == 'ASC') {
+			$url .= '&order=DESC';
+		} else {
+			$url .= '&order=ASC';
+		}
+                
+		if (isset($this->request->get['page'])) {
+                     $this->data['mypage']=$this->request->get['page'];
+			$url .= '&page=' . $this->request->get['page'];
+		}else { $this->data['mypage']='';}
+
+		$this->data['sort_order'] = $this->url->link('sale/order', 'token=' . $this->session->data['token'] . '&sort=o.order_id' . $url, 'SSL');
+		$this->data['sort_customer'] = $this->url->link('sale/order', 'token=' . $this->session->data['token'] . '&sort=customer' . $url, 'SSL');
+		$this->data['sort_status'] = $this->url->link('sale/order', 'token=' . $this->session->data['token'] . '&sort=status' . $url, 'SSL');
+		$this->data['sort_total'] = $this->url->link('sale/order', 'token=' . $this->session->data['token'] . '&sort=o.total' . $url, 'SSL');
+		$this->data['sort_date_added'] = $this->url->link('sale/order', 'token=' . $this->session->data['token'] . '&sort=o.date_added' . $url, 'SSL');
+		$this->data['sort_date_modified'] = $this->url->link('sale/order', 'token=' . $this->session->data['token'] . '&sort=o.date_modified' . $url, 'SSL');
+
+		$url = '';
+
+		if (isset($this->request->get['filter_usertype'])) {
+			$url .= '&filter_usertype=' . $this->request->get['filter_usertype'];
+		}
+		
+		/*if (isset($this->request->get['filter_cust_mailid'])) {
+			$url .= '&filter_customer=' . urlencode(html_entity_decode($this->request->get['filter_customer'], ENT_QUOTES, 'UTF-8'));
+		}*/
+											
+		if (isset($this->request->get['filter_cust_mailid'])) {
+			$url .= '&filter_cust_mailid=' . $this->request->get['filter_cust_mailid'];
+		}
+		
+		/*if (isset($this->request->get['filter_total'])) {
+			$url .= '&filter_total=' . $this->request->get['filter_total'];
+		}
+					
+		if (isset($this->request->get['filter_date_added'])) {
+			$url .= '&filter_date_added=' . $this->request->get['filter_date_added'];
+		}
+		
+		if (isset($this->request->get['filter_date_modified'])) {
+			$url .= '&filter_date_modified=' . $this->request->get['filter_date_modified'];
+		}
+
+		if (isset($this->request->get['sort'])) {
+			$url .= '&sort=' . $this->request->get['sort'];
+		}
+
+		if (isset($this->request->get['order'])) {
+			$url .= '&order=' . $this->request->get['order'];
+		}*/
+
+		$pagination = new Pagination();
+		$pagination->total = $order_total;
+		$pagination->page = $page;
+		$pagination->limit = $this->config->get('config_admin_limit');
+		$pagination->text = $this->language->get('text_pagination');
+		$pagination->url = $this->url->link('tool/export/getallcustomer', 'token=' . $this->session->data['token'] . $url . '&page={page}', 'SSL');
+                
+		$this->data['pagination'] = $pagination->render();
+
+		$this->data['filter_usertype'] = $filter_usertype;
+		$this->data['filter_cust_mailid'] = $filter_cust_mailid;
+		/*$this->data['filter_cust_mailid'] = $filter_cust_mailid;
+		$this->data['filter_order_date'] = $filter_order_date;
+                $this->data['couponcodes'] = $couponcodes;*/
+		$this->load->model('localisation/order_status');
+          
+
+    	//$this->data['order_statuses'] = $this->model_localisation_order_status->getOrderStatuses();
+       // $this->data['test12']="sdfdf";
+       
+    	//foreach ($results as $result) {
+       // }
+
+		$this->data['sort'] = $sort;
+		$this->data['order'] = $order;
+
+		$this->template = 'sale/all_customer_list.tpl';
+
+		$this->children = array(
+			'common/header',
+			'common/footer'
+		);
+		
+		$this->response->setOutput($this->render());
+  	}
     
 }
 ?>
