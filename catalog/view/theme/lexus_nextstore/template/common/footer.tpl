@@ -263,7 +263,7 @@ $class = $helper->calculateSpans( $ospans, $cols );
 <?php } else { ?>
 	<?php echo $powered; ?>. 
 <?php } ?> -->
-Footlounge.in powered by <a href="http://tech-bee.com/" target="_blank">Tech-Bee</a>. All Rights Reserved.
+gofootlounge.in powered by <a href="http://tech-bee.com/" target="_blank">Tech-Bee</a>. All Rights Reserved.
 
 
 </div>	
@@ -320,7 +320,7 @@ Not Sure about the right <b class="boldc">Shoe Size for You?</b>
 Worry not as we now have an accurate shoe size measuring tool for your convenience. Still unsure? Our Sales specialists will help you find the right size for you. Just Chat with us Or Call Us. 
 <div class="footernstyle">Online Deals and Discounts</div>
 Why Over pay? Shop with us to get the best deals in the market.
-We now provide the same great in-store shopping experience to our online community with our online shop-www.footlounge.in. We offer the best deals and discounts for sports shoes, sports clothing and sports accessories. Explore our sports collections in Adidas Sale, Reebok Sale, and Nike Sale. 
+We now provide the same great in-store shopping experience to our online community with our online shop-https://gofootlounge.in. We offer the best deals and discounts for sports shoes, sports clothing and sports accessories. Explore our sports collections in Adidas Sale, Reebok Sale, and Nike Sale. 
 Our Online shop also have weekly sale/discounts on branded clothing , fitness and accessory – Adidas track pants, Adidas t-shirts, Adidas shorts, Adidas socks, Adidas caps,  Adidas bags, Reebok track pants, Reebok t-shirts, Reebok socks, Reebok caps, sports bags, yoga mats, dumbbells, weights, tubes, bottles, kettle bells. Buy from our extensive range of sports shoes which include Tennis shoes, Cricket shoes, Football shoes, Basketball shoes, Running shoes, Training shoes, Cardio shoes, Dance shoes, Hiking shoes, Floaters, Flip-flops, Sandals. Our online shop now carry American Tourister products for a limited time.
 <div class="footernstyle">Introducing Brand <img src="https://gofootlounge.in/image/data/lo2logo.png" alt="Footlounge Logo" class="footerlogoimg"/></div>
 Did you try out our very own Brand FootLounge? Affordable Sportswear range includes Track pants, Sports T-shirts and Sports Shorts. Our unique Dry Cool technology keeps you at ease all day long. Our products are a unique combination of top quality products and rock bottom prices.
@@ -438,7 +438,7 @@ Please donate via PayPal to donate@opencart.com
 		$("li:first-child").addClass('first');
 		$("li:last-child").addClass('last');	
 		$(".box-product .row:last-child").addClass('last');				
-		$("#image-additional a:last-child").addClass('last');
+		$("#image-additional a:last-child").addClass('last'); 
 		$(".product-items:last-child").addClass('last');
 		$('.product-cols:last-child').addClass('last');	
 		$(".product-cols:first-child").addClass('first');		
