@@ -311,6 +311,7 @@ function shownextdiscount1(endvalue,totalvalue)//show value
 function shownextdiscount1(endvalue,totalvalue)//show value
 {
 	var totval=parseInt(endvalue)+ parseInt(3);
+	if($( ".product_newpopup" ).hasClass( "pro" )){ $(".pro").hide(); } 
 	if(endvalue ==1)
 	{ 
 		
@@ -360,6 +361,7 @@ function shownextdiscount1(endvalue,totalvalue)//show value
 function pshownextdiscount1(endvalue,totalvalue)//show value
 {
 	var totval=parseInt(endvalue) - parseInt(3);
+	if($( ".product_newpopup" ).hasClass( "pro" )){ $(".pro").hide(); } 
 	if(totalvalue ==1)
 	{ 
 		
@@ -382,7 +384,7 @@ function pshownextdiscount1(endvalue,totalvalue)//show value
 	{
 	  for(var i=totalvalue;i>=1;i--)
 		{
-			alert('sdfds'); 
+			
 			if(i<=endvalue)
 			{
 				$(".pro"+i).hide();
@@ -396,7 +398,7 @@ function pshownextdiscount1(endvalue,totalvalue)//show value
 				}
                                 else
                                 {
-                                        alert('sfsdfd'); 
+                                       
                                         $(".pro"+i).hide();   
                                 }	
 			} 
