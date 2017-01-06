@@ -282,7 +282,7 @@ flag=0;} else {$("#couponcodes").css('border','1px solid #ccc');}
 
 $.ajax({
     type: "POST",
-    url: 'http://testourwork.com/footlounge/discountmail.php', 
+    url: 'https://footlounge.in/discountmail.php', 
     data: {
      abuserid:abuserid,
      
