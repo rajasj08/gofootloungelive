@@ -163,6 +163,8 @@ class ControllerCommonSeoUrl extends Controller {
                            $this->request->get['route']='common/home/page410';
                         }  
 
+                      
+
 			             if (isset($this->request->get['route'])) {
 				          //echo $this->request->get['route']; die;
 				          return $this->forward($this->request->get['route']); 
