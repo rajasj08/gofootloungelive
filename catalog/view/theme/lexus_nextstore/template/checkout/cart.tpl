@@ -453,7 +453,7 @@ ecomm_totalvalue: [<?php $count=count($products); $j=1;$priceval='';
         <h4 class="modal-title">APPLY COUPON</h4>
       </div>
       <div class="modal-body">
-      <!--<div style="margin-bottom: 20px;" ><p>This product has been solded out! Kindly fill the following details, our executive will contact you in another 48 hours. <a href="http://www.footlounge.in/new-arrivals"><span style="color: #CD6927 " id="modal_content">Happy Shopping</span><a></p></div>-->
+      <!--<div style="margin-bottom: 20px;" ><p>This product has been solded out! Kindly fill the following details, our executive will contact you in another 48 hours. <a href="https://footlounge.in/new-arrivals"><span style="color: #CD6927 " id="modal_content">Happy Shopping</span><a></p></div>-->
 		<!--<div style="margin-bottom: 20px;" ><p> Notify me when the product is back in Stock!</p></div> -->
 
        	<form class="form-horizontal">
@@ -506,7 +506,7 @@ ecomm_totalvalue: [<?php $count=count($products); $j=1;$priceval='';
         <h4 class="modal-title">Change Product Size</h4>
       </div>
       <div class="modal-body">
-      <!--<div style="margin-bottom: 20px;" ><p>This product has been solded out! Kindly fill the following details, our executive will contact you in another 48 hours. <a href="http://www.footlounge.in/new-arrivals"><span style="color: #CD6927 " id="modal_content">Happy Shopping</span><a></p></div>-->
+      <!--<div style="margin-bottom: 20px;" ><p>This product has been solded out! Kindly fill the following details, our executive will contact you in another 48 hours. <a href="https://footlounge.in/new-arrivals"><span style="color: #CD6927 " id="modal_content">Happy Shopping</span><a></p></div>-->
 		<div style="margin-bottom: 20px;" ><p></p></div>
 
        	<form class="form-horizontal">

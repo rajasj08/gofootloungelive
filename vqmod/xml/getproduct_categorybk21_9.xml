@@ -21,10 +21,10 @@
 
 	<file name="catalog/view/theme/*/template/product/product.tpl">
 		<operation>
-			<search position="replace"><![CDATA['http://www.footlounge.in/betademo/index.php?route=information/information&information_id=7#<?php echo $manufacturer; ?>'
+			<search position="replace"><![CDATA['https://footlounge.in/betademo/index.php?route=information/information&information_id=7#<?php echo $manufacturer; ?>'
 			]]></search>
-<add><![CDATA[<?php $categories = array(153,84,214); if (in_array($category_id, $categories)) {?>'http://www.footlounge.in/betademo/index.php?route=information/information&information_id=13#<?php echo $manufacturer; ?>'
-					<?php } else{ ?>'http://www.footlounge.in/betademo/index.php?route=information/information&information_id=7#<?php echo $manufacturer; ?>'
+<add><![CDATA[<?php $categories = array(153,84,214); if (in_array($category_id, $categories)) {?>'https://footlounge.in/betademo/index.php?route=information/information&information_id=13#<?php echo $manufacturer; ?>'
+					<?php } else{ ?>'https://footlounge.in/betademo/index.php?route=information/information&information_id=7#<?php echo $manufacturer; ?>'
 					<?php } ?>
 				
 			]]></add>
