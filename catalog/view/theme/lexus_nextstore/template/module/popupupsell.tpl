@@ -162,7 +162,7 @@ function checkupsellproduct(productid,upsellid,upsellproductprice,upsellproducts
           if(resp)
           {
           	addToCartpopup(productid,1,optionid,optionvalueid);
-         //window.location.href="http://192.168.1.105/projects/Elakkiya/footloungeupdate_042016/index.php?route=product/product&product_id="+productid;     
+         //window.location.href="https://footlounge.in/index.php?route=product/product&product_id="+productid;     
       		} 
         }
      });

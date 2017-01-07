@@ -491,7 +491,7 @@ ecomm_totalvalue: [<?php $count=count($products); $j=1;$priceval='';
       <!---<div class="modal-footer" style=" padding: 8px 20px 8px !important;">
       <span class="alert alert-success" style=" padding:5px !important; margin-bottom:0px; display:none;"  id="success_msgaa">Request sent successfully</span>
       <span class="alert alert-danger" style=" padding:5px !important; margin-bottom:0px;display:none;" id="failure_msg">sending failed</span>
-      	<img src="http://192.168.1.105/projects/Elakkiya/footloungeupdate_042016/image/	loading_spinner.gif" alt="loading..." id="image_spinner">
+      	<img src="https://footlounge.in/image/loading_spinner.gif" alt="loading..." id="image_spinner">
         <button type="button" class="btn btn-default" id="closebtn" onclick="closemodal();">Close</button>
         <button type="button" class="btn btn-primary" id="sendbtn" onclick="sendnotify();">Send</button>
       </div> -->
@@ -557,7 +557,7 @@ ecomm_totalvalue: [<?php $count=count($products); $j=1;$priceval='';
       <div class="modal-footer" style=" padding: 8px 20px 8px !important;">
       <span class="alert alert-success" style=" padding:5px !important; margin-bottom:0px; display:none;"  id="success_msgaa">Request sent successfully</span>
       <span class="alert alert-danger" style=" padding:5px !important; margin-bottom:0px;display:none;" id="failure_msg">sending failed</span>
-      	<img src="http://footlounge.in/image/loading_spinner.gif" alt="loading..." id="image_spinner">
+      	<img src="https://footlounge.in/image/loading_spinner.gif" alt="loading..." id="image_spinner">
         <button type="button" class="btn btn-default" id="closebtn" onclick="closeproductSizeModal();">Close</button>
         <button type="button" class="btn btn-primary" id="sendbtn" onclick="updatecartprodsize();">Submit</button>
       </div>
@@ -571,7 +571,7 @@ ecomm_totalvalue: [<?php $count=count($products); $j=1;$priceval='';
 	{
 		$("#cartcouponModal").modal('show'); 
 	}
-
+ 
 	function applycouponcart()// apply coupon
 	{
                /*  var flag=1;

@@ -654,7 +654,7 @@ function testme()
                      $("#success_msg1").hide();
                 }, 5000);
                 
-                window.location.href='http://testourworks.com/footlounge/new-arrivals'; 
+                window.location.href='https://footlounge.in/new-arrivals'; 
                 } 
                 else
                 {
