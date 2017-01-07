@@ -734,4 +734,4 @@ class ControllerProductSearch extends Controller {
 	//]]>
 	// end search auto fill
 }
-?>  
+?> 
