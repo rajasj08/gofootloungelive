@@ -262,8 +262,8 @@ $class = $helper->calculateSpans( $ospans, $cols );
 	<?php echo $themeConfig['copyright'];?>
 <?php } else { ?>
 	<?php echo $powered; ?>. 
-<?php } ?> -->
-gofootlounge.in powered by <a href="http://tech-bee.com/" target="_blank">Tech-Bee</a>. All Rights Reserved.
+<?php } ?> --> 
+Footlounge.in powered by <a href="http://tech-bee.com/" target="_blank">Tech-Bee</a>. All Rights Reserved.
 
 
 </div>	
@@ -288,7 +288,7 @@ if ($(window).width()  < 768) {
  $(".footer-links").hide();
 $(".mobcnt").show();
 }
-else
+else 
 {
 
 $(".mobcnt").hide(); 
