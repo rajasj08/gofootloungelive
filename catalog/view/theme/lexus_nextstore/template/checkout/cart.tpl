@@ -120,6 +120,7 @@
 					</table>
 				</div>
 <!--<div class="left"><a href="<?php echo $continue; ?>" class="button btn btn-theme-default btnconmovecls"><?php echo $button_shopping; ?></a></div> -->
+<div class="left mycartleftdivq"><a href="<?php echo $continue; ?>" class="button btn btn-theme-default btnconmovecls"><?php echo $button_shopping; ?></a></div>
 			</form>
 			
 			<!--<div class="cart_coupon_voucher_reward_msg"> <h5 class="text-right">All coupon codes/gift vouchers can be applied at checkout.</h5></div> -->
@@ -194,7 +195,7 @@
 		<div class="buttons buttonpadcls">
 			<div class="right"><a onclick="smartcheckoutpopup();" class="button btn btn-theme-default">CHECKOUT NOW<?php //echo $button_checkout; ?></a></div>
 		
-<div class="left"><a href="<?php echo $continue; ?>" class="button btn btn-theme-default btnconmovecls"><?php echo $button_shopping; ?></a></div>
+<!--<div class="left"><a href="<?php echo $continue; ?>" class="button btn btn-theme-default btnconmovecls"><?php echo $button_shopping; ?></a></div>-->
 		</div>	
 		
 		

@@ -130,7 +130,7 @@ class ControllerModuleCart extends Controller {
 
 					if (is_array($this->session->data['upsell_array'])) {
 						# code...
-					
+					//print_r($this->session->data['upsell_array']); die; 
 			
 						// get upsell product array
 						foreach ($this->session->data['upsell_array'] as $key1 => $value1) {
@@ -181,7 +181,7 @@ class ControllerModuleCart extends Controller {
 											}
 
 											if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-												$total = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * ($product['quantity'] - 1) + $productpriceval); 
+												$total = $this->currency->format($this->tax->calculate($product['price'], 0, $this->config->get('config_tax')) * ($product['quantity'] - 1) + $productpriceval); 
 											} else {
 												$total = false;
 											}
@@ -193,6 +193,7 @@ class ControllerModuleCart extends Controller {
 										{
 											
 											$product['price']=$value1['upsell_productprice'];
+
 											
 											if($value1['upsell_productspecial'])
 											{
@@ -202,7 +203,7 @@ class ControllerModuleCart extends Controller {
 
 
 											if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-												$total = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity']);
+												$total = $this->currency->format($this->tax->calculate($product['price'],0, $this->config->get('config_tax')) * $product['quantity']);
 											} else {
 												$total = false;
 											}
@@ -215,7 +216,7 @@ class ControllerModuleCart extends Controller {
 							else
 							{
 								if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-									$total = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity']);
+									$total = $this->currency->format($this->tax->calculate($product['price'], 0, $this->config->get('config_tax')) * $product['quantity']);
 								} else {
 									$total = false;
 								} 
@@ -225,7 +226,7 @@ class ControllerModuleCart extends Controller {
 						else
 							{
 								if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-									$total = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity']);
+									$total = $this->currency->format($this->tax->calculate($product['price'], 0, $this->config->get('config_tax')) * $product['quantity']);
 								} else {
 									$total = false;
 								} 
@@ -246,6 +247,8 @@ $total = $this->currency->format($this->tax->calculate($product['price'], 0, $th
 
 				//echo "jkhjdfd"; die; 
 		//***upsell product details end here
+
+//echo $product['price']; die; 
 			
 			// Display prices
 			if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
@@ -478,7 +481,7 @@ $price = $this->currency->format($this->tax->calculate($product['price'], 0, $th
 											}
 
 											if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-												$total = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * ($product['quantity'] - 1) + $productpriceval); 
+												$total = $this->currency->format($this->tax->calculate($product['price'], 0, $this->config->get('config_tax')) * ($product['quantity'] - 1) + $productpriceval); 
 											} else {
 												$total = false;
 											}
@@ -499,7 +502,7 @@ $price = $this->currency->format($this->tax->calculate($product['price'], 0, $th
 
 
 											if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-												$total = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity']);
+												$total = $this->currency->format($this->tax->calculate($product['price'], 0, $this->config->get('config_tax')) * $product['quantity']);
 											} else {
 												$total = false;
 											}
@@ -512,7 +515,7 @@ $price = $this->currency->format($this->tax->calculate($product['price'], 0, $th
 							else
 							{
 								if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-									$total = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity']);
+									$total = $this->currency->format($this->tax->calculate($product['price'], 0, $this->config->get('config_tax')) * $product['quantity']);
 								} else {
 									$total = false;
 								} 
@@ -522,7 +525,7 @@ $price = $this->currency->format($this->tax->calculate($product['price'], 0, $th
 						else
 							{
 								if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-									$total = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity']);
+									$total = $this->currency->format($this->tax->calculate($product['price'], 0, $this->config->get('config_tax')) * $product['quantity']);
 								} else {
 									$total = false;
 								} 
@@ -534,7 +537,7 @@ $price = $this->currency->format($this->tax->calculate($product['price'], 0, $th
 				else
 							{
 								if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-									$total = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity']);
+									$total = $this->currency->format($this->tax->calculate($product['price'],0, $this->config->get('config_tax')) * $product['quantity']);
 								} else {
 									$total = false;
 								} 
@@ -545,7 +548,7 @@ $price = $this->currency->format($this->tax->calculate($product['price'], 0, $th
 			
 			// Display prices
 			if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-				$price = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')));
+				$price = $this->currency->format($this->tax->calculate($product['price'], 0, $this->config->get('config_tax')));
 			} else {
 				$price = false;
 			}
