@@ -25,7 +25,7 @@ class ControllerProductProduct extends Controller {
 				$this->session->data['user_zipcode']=$cust_postcode;
 		}
 
-		else
+		else 
 		{
 			if(isset($this->session->data['user_zipcode']))
 			{
@@ -339,9 +339,11 @@ class ControllerProductProduct extends Controller {
 			$newarrivalProductIDS = explode(',', $this->config->get('featured_product'));
 			$this->data['priceorg']=$product_info['price'];
 			$this->data['specialorg']=$product_info['special'];
+			foreach ($results as $result) {
 
 
-                         $currProductID = $this->request->get['product_id'];
+
+				$currProductID = $result['product_id'];
 
 		//***upsell product details start here		
 
@@ -407,11 +409,6 @@ class ControllerProductProduct extends Controller {
 				}
 
 				$this->data['is_newarrival'] = $productNewArrival;
-			foreach ($results as $result) {
-
-
-
-				
 				$this->data['images'][] = array(
 					'popup' => $this->model_tool_image->resize($result['image'], $this->config->get('config_image_popup_width'), $this->config->get('config_image_popup_height')),
 					'thumb' => $this->model_tool_image->resize($result['image'], $this->config->get('config_image_additional_width'), $this->config->get('config_image_additional_height'))
@@ -572,7 +569,7 @@ class ControllerProductProduct extends Controller {
                                        $price = $this->currency->format($this->tax->calculate($result['price'], 0, $this->config->get('config_tax'))); 
 				} else {
 					$price = false;
-				}
+				} 
 						
 				if ((float)$result['special']) {
 					/*$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')));*/
